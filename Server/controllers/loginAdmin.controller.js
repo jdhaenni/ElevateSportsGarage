@@ -1,0 +1,55 @@
+import { Admin  } from "../models/admin.schema.js";
+import bcrypt from 'bcryptjs'
+import jwt from "jsonwebtoken"
+
+export async function adminLoginFunction(req,res) {
+    
+    const { user, password } = req.body;
+
+    if (!user || !password) {
+        return res.status(400).json({
+            success: false,
+            message: "Please provide all the fields"
+        })
+    }
+
+    try {
+        // find the user in the database
+        const userName = await Admin.findOne({ user });
+
+        // if the user is not found then return an error
+        if (!user) {
+            return res.status(404).json({
+                success: false,
+                message: "User not found"
+            })
+        }
+
+        // // compare the password
+        const isValidPassword = await bcrypt.compare(password, userName.password)
+
+        // validate the password
+        if (!isValidPassword) {
+            return res.status(401).json({
+                success: false,
+                message: "Invalid credentials"
+            })
+        }
+
+        // generate a jwt token
+        const token = jwt.sign(
+            {
+                userId: user._id,
+                message:'ADMIN'
+               
+            },
+            process.env.JWT_SECRET,
+            { expiresIn: '1h' }
+        )
+
+        // send the success response
+        res.status(200).json(token)
+    } catch (error) {
+        console.log(error);
+    }
+}
