@@ -1,5 +1,6 @@
 import React from 'react'
 import Home from './pages/Home'
+import Admin from './pages/Admin';
 import {
   BrowserRouter as Router,
   Route,
@@ -11,6 +12,7 @@ export default function App() {
    <Router>
     <Routes>
       <Route path='/' element={<Home />}/>
+      <Route path='/admin' element={<Admin />}/>
     </Routes>
    </Router>
 )}
