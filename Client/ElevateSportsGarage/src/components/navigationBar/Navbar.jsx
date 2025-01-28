@@ -1,7 +1,7 @@
 import React from 'react'
-import './navbar.css'
+import './Navbar.css'
 
-export default function navbar () {
+export default function NavBar () {
   return (
     <nav className='nav'>
       <a href='/' className='site-title'>
