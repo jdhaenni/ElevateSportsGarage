@@ -97,5 +97,5 @@ export async function deleteService (req, res) {
     console.log(error)
   }
 
-  res.send('Service Deleted!')
+ 
 }
