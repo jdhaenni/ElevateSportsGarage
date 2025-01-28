@@ -1,6 +1,6 @@
 import jwt from 'jsonwebtoken'
-import {Admin} from '../models/admin.schema'
-export async function authenticateUser(req, res, next){
+import {Admin} from '../models/admin.schema.js'
+export default async function authenticateUser(req, res, next){
     try {
         // get the token from the request headers
         //make sure 'token' is what it is named etc
@@ -10,7 +10,7 @@ export async function authenticateUser(req, res, next){
         if (!token) {
             return res.status(401).json({
                 success: false,
-                message: "Authentication failed"
+                message: "Authentication failed, no token"
             })
         }
 
@@ -20,10 +20,10 @@ export async function authenticateUser(req, res, next){
         // get the user from the database
         const admin = await Admin.findById(decoded.userId);
 
-        if (!user) {
+        if (!admin) {
             return res.status(401).json({
                 success: false,
-                message: "Authentication failed"
+                message: "Authentication failed, "
             })
         }
 
