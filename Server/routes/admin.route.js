@@ -1,6 +1,6 @@
 import express from 'express';
-import { adminLoginFunction } from '../controllers/loginAdmin.controller.js';
-import { createAdmin } from '../controllers/createAdmin.controller.js';
+import { adminLoginFunction } from '../controllers/admin.controller.js';
+import { createAdmin } from '../controllers/admin.controller.js';
 
 const router = express.Router();
 
