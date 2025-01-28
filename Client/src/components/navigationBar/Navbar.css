@@ -4,13 +4,43 @@
   box-sizing: border-box;
 }
 
-.nav {
-  background-color: rgb(152, 221, 50);
+.navbar {
+  background-color: rgb(13, 14, 13);
   color: black;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
-  gap: 2rem;
-  padding: 0 1rem;
-  height: 4rem;
+  padding: 20px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  height: 300px;
+}
+
+.nav-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: black;
+  background-color: rgb(36, 223, 11);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.site-title {
+  font-size: 3rem;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  padding: 5px;
+  font-family: "Arial", sans-serif;
+}
+
+.tagline {
+  font-size: 2rem;
+  font-family: "Arial", sans-serif;
+  display: flex;
+  justify-content: center;
 }
