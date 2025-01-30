@@ -1,6 +1,22 @@
-import { Admin  } from "../models/admin.schema.js";
+import {Admin} from '../models/admin.schema.js';
 import bcrypt from 'bcryptjs'
 import jwt from "jsonwebtoken"
+const SALT_ROUNDS = 10;
+
+export async function createAdmin(req,res) {
+    console.log(req.body)
+    const{user, password} = req.body
+    const hashedPassword = await bcrypt.hash(password, SALT_ROUNDS)
+ 
+    const admin = new Admin({
+        user,
+        password:hashedPassword
+    })
+    
+    res.send('User Created Succesfully')
+    await admin.save();
+}
+
 
 export async function adminLoginFunction(req,res) {
     
@@ -15,10 +31,10 @@ export async function adminLoginFunction(req,res) {
 
     try {
         // find the user in the database
-        const userName = await Admin.findOne({ user });
+        const admin = await Admin.findOne({ user });
 
         // if the user is not found then return an error
-        if (!user) {
+        if (!admin) {
             return res.status(404).json({
                 success: false,
                 message: "User not found"
@@ -26,7 +42,7 @@ export async function adminLoginFunction(req,res) {
         }
 
         // // compare the password
-        const isValidPassword = await bcrypt.compare(password, userName.password)
+        const isValidPassword = await bcrypt.compare(password, admin.password)
 
         // validate the password
         if (!isValidPassword) {
@@ -39,7 +55,7 @@ export async function adminLoginFunction(req,res) {
         // generate a jwt token
         const token = jwt.sign(
             {
-                userId: user._id,
+                userId: admin._id,
                 message:'ADMIN'
                
             },

@@ -4,8 +4,9 @@ const port = 3000
 import dotenv from 'dotenv';
 dotenv.config();
 import {connect} from './config/database.js'
-import AdminLoginRoute from './routes/adminLogin.route.js'
-import CreateAdminRoute from './routes/createAdmin.route.js'
+import AdminRoute from './routes/admin.route.js'
+import ServicesRoute from './routes/services.route.js'
+import ReviewsRoute from './routes/reviews.route.js'
 import cors from 'cors'
 
 
@@ -18,9 +19,9 @@ app.get('/', (req, res) => {
   res.send('Hello World!')
 })
 
-app.use('/api/createadmin', CreateAdminRoute)
-app.use('/api/loginadmin', AdminLoginRoute)
-
+app.use('/', AdminRoute)
+app.use('/', ServicesRoute)
+app.use('/',ReviewsRoute)
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
