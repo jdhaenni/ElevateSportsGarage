@@ -9,11 +9,10 @@ const ServiceItem = ({ service, onUpdate, onDelete }) => {
   });
 
   const handleEdit = () => setIsEditing(true);
-
   const handleCancel = () => setIsEditing(false);
 
   return (
-    <li>
+    <div className="service-card">
       {isEditing ? (
         <form
           onSubmit={(e) => {
@@ -49,12 +48,12 @@ const ServiceItem = ({ service, onUpdate, onDelete }) => {
         <div>
           <h3>{service.name}</h3>
           <p>{service.description}</p>
-          <p>Price: {service.price}</p>
+          <p>Price: ${service.price}</p>
           <button onClick={handleEdit}>Edit</button>
           <button onClick={() => onDelete(service._id)}>Delete</button>
         </div>
       )}
-    </li>
+    </div>
   );
 };
 
