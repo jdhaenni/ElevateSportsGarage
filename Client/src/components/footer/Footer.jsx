@@ -10,13 +10,13 @@ export default function Footer() {
       </div>
       <div className="footer-social">
         <a href="LINK HERE">
-          <i className="facebook"></i>
+          <i className="facebook"> Facebook</i>
         </a>
         <a href="LINK HERE">
-          <i className="instagram"></i>
+          <i className="instagram"> Instagram</i>
         </a>
         <a href="LINK HERE">
-          <i className="twitter"></i>
+          <i className="twitter"> Twitter</i>
         </a>
         <div className="footer-rights">
           <p>© date here Elevate Sports Garage. All rights reserved.</p>
