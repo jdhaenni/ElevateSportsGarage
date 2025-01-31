@@ -2,8 +2,14 @@ import AuthService from "./AuthService";
 
 // fetch all services
 export const fetchAllServices = async () => {
-  const response = await AuthService.get("/services");
+  try {
+     const response = await AuthService.get("/services");
+    response => response.json
   return response.data;
+  }
+  catch (error) {
+    
+  }
 };
 
 // fetch a single service by id
