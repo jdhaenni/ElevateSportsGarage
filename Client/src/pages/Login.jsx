@@ -1,9 +1,10 @@
 import React from 'react'
 import { loginAdmin } from '../api/LoginApi';
 import {useState } from 'react'
-
+import { useNavigate } from "react-router-dom";
 
 export default function Admin() {
+  const navigate = useNavigate()
   const [formData, setFormData] = useState({
     user: "",
     password: "",
@@ -15,13 +16,13 @@ const handleSubmit = async (e) => {
   try {
 
       const token = await loginAdmin(formData);
-      
+      if (!token){return}
 
       localStorage.setItem("token", token);
 
       
       console.log(token)
-      // navigate("/protected");
+       navigate("/protected");
   } catch (error) {
       console.log(error);
       

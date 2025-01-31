@@ -1,1 +1,1 @@
-1. check async in admin
+ask chris about login !token/protected routes token validation
