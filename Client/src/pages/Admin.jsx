@@ -1,13 +1,23 @@
 import React from 'react'
 import { fetchAllServices } from '../api/ServicesApi'
 import { useEffect,useState } from 'react'
+
+
 export default function Admin() {
  const [services,setServices] = useState([])
+
    useEffect(() => {
-  	const data = fetchAllServices();
-    setServices(data)
+    const fetchServices = async ()=>{
+      const data = await fetchAllServices()
+      setServices(data)
+    }
+    fetchServices()
   },[])
+
   console.log(services)
+
+
+
   return (
     <div>
       <form>
@@ -19,11 +29,13 @@ export default function Admin() {
       </form>
       <ul>
       {services.map((service)=>{
-        <li>
+        return(
+        <li key = {service._id}>
           <p>
-            {service}
+            {service.name}<br></br>
+            {service.price}
           </p>
-        </li>
+        </li>)
       })}
       </ul>
     </div>
