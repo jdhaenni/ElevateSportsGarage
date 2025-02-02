@@ -26,7 +26,7 @@ export default function Admin () {
     fetchServices()
   }, [])
 
-  console.log(services)
+ 
 
   const [reviews, setReviews] = useState([])
 
@@ -36,13 +36,19 @@ export default function Admin () {
       setReviews(data)
     }
     fetchReviews()
-  }, [])
+  }, [reviews])
 
-  console.log(reviews)
+  
+
+ const deleteReviewButton = async (e)=>{
+    deleteReview(e.target.name)
+ }
 
 
   return (
     <div>
+      SERVICES!<br></br>
+      <button >CREATE</button><br></br>
       <ul>
         {services.map(service => {
           return (
@@ -50,20 +56,29 @@ export default function Admin () {
               <p>
                 {service.name}
                 <br></br>
-                {service.price}
+                {service.description}<br></br>
+                {service.price}<br></br>
+                <button >UPDATE</button><br></br>
+                <button >DELETE</button><br></br>
               </p>
             </li>
           )
         })}
       </ul>
       <ul>
+      REVIEWS!<br></br>
+      <button >CREATE</button><br></br>
         {reviews.map(review => {
           return (
             <li key={review._id}>
               <p>
                 {review.name}
                 <br></br>
-                {review.stars}
+                {review.stars}<br></br>
+                {review.date}<br></br>
+                {review.body}<br></br>
+                <button  >UPDATE</button><br></br>
+                <button name={review._id} onClick={deleteReviewButton}>DELETE</button><br></br>
               </p>
             </li>
           )
