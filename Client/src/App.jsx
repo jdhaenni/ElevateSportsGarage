@@ -1,8 +1,8 @@
 import React from "react";
 import Home from "./pages/Home";
+import Login from "./pages/Login";
 import Admin from "./pages/Admin";
-import Footer from "./components/footer/Footer";
-
+import ProtectedRoute from "./pages/ProtectedRoute";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 export default function App() {
@@ -10,9 +10,17 @@ export default function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/admin" element={<Admin />} />
+        <Route path="/login" element={<Login />} />
+
+        <Route
+          path="/protected"
+          element={
+            <ProtectedRoute>
+              <Admin />
+            </ProtectedRoute>
+          }
+        ></Route>
       </Routes>
-      <Footer />
     </Router>
   );
 }

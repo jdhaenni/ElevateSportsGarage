@@ -1,9 +1,20 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Navbar.css'
+import { FaBars } from 'react-icons/fa'
+import Sidebar from '../sidebar/Sidebar'
 
 export default function NavBar () {
+  const [isOpen, setIsOpen] = useState(false)
+
+  const toggleSidebar = () => setIsOpen(!isOpen)
   return (
     <nav className='navbar'>
+      <div className='sidebar-container'>
+        <button onClick={toggleSidebar} className='toggle-button'>
+          <FaBars />
+        </button>
+        <Sidebar isOpen={isOpen} toggleSidebar={toggleSidebar} />
+      </div>
       <div>
         <img
           className='logo'

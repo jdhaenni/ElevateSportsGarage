@@ -2,9 +2,11 @@ import AuthService from "./AuthService"; // import the apiClient
 
 // GET: fetch all services
 export const fetchAllServices = async () => {
-  // async function
-  const response = await AuthService.get("/services"); // wait for the response
-  return response.data; // return the data
+  try {
+    const response = await AuthService.get("/services");
+    (response) => response.json;
+    return response.data;
+  } catch (error) {}
 };
 
 // GET: fetch a single service by id
