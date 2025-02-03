@@ -4,8 +4,8 @@ export default async function authenticateUser(req, res, next){
     try {
         // get the token from the request headers
         //make sure 'token' is what it is named etc
-        const token = req.headers['token'];
-
+        const token = req.headers.authorization;
+        console.log(token)
         // validate the token
         if (!token) {
             return res.status(401).json({
