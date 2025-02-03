@@ -1,4 +1,4 @@
-import AuthService from "./apiClient"; // import the apiClient
+import AuthService from "./AuthService"; // import the apiClient
 
 // GET: fetch all services
 export const fetchAllServices = async () => {
