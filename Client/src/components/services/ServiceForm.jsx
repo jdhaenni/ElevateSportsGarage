@@ -1,12 +1,12 @@
-import React, { useState } from "react";
+import React, { useState } from "react"; // The useState hook is imported from the react package.
 
 const ServiceForm = ({ onCreate }) => {
   // The ServiceForm component takes a prop called onCreate, which is a function that is called when a new service is created.
   const [formData, setFormData] = useState({
     // formData is an object with three properties: name, description, and price. The useState hook is used to initialize the state of the form data.
-    name: "",
-    description: "",
-    price: "",
+    name: "", // The name property is initialized to an empty string.
+    description: "", // The description property is initialized to an empty string.
+    price: "", // The price property is initialized to an empty string.
   });
 
   const handleSubmit = async (e) => {
@@ -51,7 +51,7 @@ const ServiceForm = ({ onCreate }) => {
         onChange={(e) => setFormData({ ...formData, price: e.target.value })} // The onChange event handler updates the price property of the form data with the new value entered by the user.
         required // The required attribute of the input field is set to true.
       />
-      <button type="submit">Add Service</button>{" "}
+      <button type="submit">Add a Service</button>{" "}
       {/* The form has a submit button with the text "Add Service". */}
     </form>
   );
