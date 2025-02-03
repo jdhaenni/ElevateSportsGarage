@@ -24,7 +24,7 @@ export default function Admin () {
       setServices(data)
     }
     fetchServices()
-  }, [])
+  }, [services])
 
  
 
@@ -38,7 +38,9 @@ export default function Admin () {
     fetchReviews()
   }, [reviews])
 
-  
+  const deleteServiceButton = async (e)=>{
+    deleteService(e.target.name)
+ }
 
  const deleteReviewButton = async (e)=>{
     deleteReview(e.target.name)
@@ -59,7 +61,7 @@ export default function Admin () {
                 {service.description}<br></br>
                 {service.price}<br></br>
                 <button >UPDATE</button><br></br>
-                <button >DELETE</button><br></br>
+                <button name={service._id} onClick={deleteServiceButton} >DELETE</button><br></br>
               </p>
             </li>
           )
