@@ -7,6 +7,7 @@ import {connect} from './config/database.js'
 import AdminRoute from './routes/admin.route.js'
 import ServicesRoute from './routes/services.route.js'
 import ReviewsRoute from './routes/reviews.route.js'
+import ContactsRoute from './routes/contacts.route.js' 
 import cors from 'cors'
 
 
@@ -22,6 +23,7 @@ app.get('/', (req, res) => {
 app.use('/', AdminRoute)
 app.use('/', ServicesRoute)
 app.use('/',ReviewsRoute)
+app.use('/',ContactsRoute)
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
