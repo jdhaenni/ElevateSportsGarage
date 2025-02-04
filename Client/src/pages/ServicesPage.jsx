@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { fetchAllServices } from "../api/ServicesApi";
 import ServiceItem from "../components/ServiceItem";
-import "../ServicesPage.css";
+import "..ServicesPage.css";
 
 const ServicesPage = () => {
   const [services, setServices] = useState([]);

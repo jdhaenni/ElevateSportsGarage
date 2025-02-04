@@ -3,13 +3,10 @@ import AuthService from "./AuthService";
 // fetch all reviews
 export const fetchAllReviews = async () => {
   try {
-     const response = await AuthService.get("/reviews");
-    response => response.json
-  return response.data;
-  }
-  catch (error) {
-    
-  }
+    const response = await AuthService.get("/reviews");
+    (response) => response.json;
+    return response.data;
+  } catch (error) {}
 };
 
 // fetch a single review by id
