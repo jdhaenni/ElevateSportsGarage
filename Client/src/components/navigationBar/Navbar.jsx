@@ -1,33 +1,33 @@
-import React, { useState } from 'react'
-import './Navbar.css'
-import { FaBars } from 'react-icons/fa'
-import Sidebar from '../sidebar/Sidebar'
+import React, { useState } from "react";
+import "./Navbar.css";
+import { FaBars } from "react-icons/fa";
+import Sidebar from "../sidebar/Sidebar";
 
-export default function NavBar () {
-  const [isOpen, setIsOpen] = useState(false)
+export default function NavBar() {
+  const [isOpen, setIsOpen] = useState(false);
 
-  const toggleSidebar = () => setIsOpen(!isOpen)
+  const toggleSidebar = () => setIsOpen(!isOpen);
   return (
-    <nav className='navbar'>
-      <div className='sidebar-container'>
-        <button onClick={toggleSidebar} className='toggle-button'>
+    <nav className="navbar">
+      <div className="sidebar-container">
+        <button onClick={toggleSidebar} className="toggle-button">
           <FaBars />
         </button>
         <Sidebar isOpen={isOpen} toggleSidebar={toggleSidebar} />
       </div>
       <div>
         <img
-          className='logo'
-          src='https://www.elevatesportsgarage.com/_next/image?url=%2Flogo.png&w=256&q=75'
-          alt='esg logo'
+          className="logo"
+          src="https://www.elevatesportsgarage.com/_next/image?url=%2Flogo.png&w=256&q=75"
+          alt="esg logo"
         />
       </div>
-      <div className='nav-content'>
-        <h1 className='site-title'>Elevate Sports Garage</h1>
-        <p className='tagline'>
+      <div className="nav-content">
+        <h1 className="site-title">Elevate Sports Garage</h1>
+        <p className="tagline">
           Elevate Your Game at Canyon Lake's Premier Batting Facility
         </p>
       </div>
     </nav>
-  )
+  );
 }
