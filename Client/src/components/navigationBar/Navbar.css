@@ -16,7 +16,7 @@
 .logo {
   display: flex;
   align-items: center;
-  height: 300px;
+  max-height: 40vh;
 }
 
 .nav-content {
@@ -25,16 +25,25 @@
   justify-content: center;
   color: black;
   background-color: rgb(36, 223, 11);
-  padding: 20px;
+  padding: 10px;
   border-radius: 10px;
+}
+
+.toggle-button {
+  color: rgb(10, 238, 10);
+  width: 100%;
+  font-size: x-large;
+  padding: 5px;
+  margin-right: 2rem;
 }
 
 .site-title {
   font-size: 3rem;
   font-weight: bold;
   display: flex;
+  margin: 0;
   justify-content: center;
-  padding: 5px;
+  padding: 10px;
   font-family: "Arial", sans-serif;
 }
 
@@ -45,22 +54,25 @@
   justify-content: center;
 }
 
-/* CELL PHONE MEDIA QUERIES */
-@media only screen and (max-width: 375px) {
+/* Desktop media queries */
+@media screen and (max-width: 1244px) {
 }
 
-/* HORIZONTAL PHONE MEDIA QUERIES */
-@media only screen and (min-width: 376px) and (max-width: 768px) {
+/* Tablet media queries */
+@media screen and (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 
-/* TABLET MEDIA QUERIES */
-@media only screen and (min-width: 769px) and (max-width: 1024px) {
-}
+/* Cell phone media queries */
+@media screen and (max-width: 480px) {
+  .site-title {
+    font-size: 1.5em;
+  }
 
-/* LAPTOP MEDIA QUERIES */
-@media only screen and (min-width: 1025px) and (max-width: 1440px) {
-}
-
-/* DESKTOP MEDIA QUERIES */
-@media only screen and (min-width: 1441px) {
+  .tagline {
+    font-size: 0.8em;
+  }
 }
