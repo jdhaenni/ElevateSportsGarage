@@ -4,6 +4,7 @@ import Login from "./pages/Login";
 import Admin from "./pages/Admin";
 import ServicesPage from "./pages/ServicesPage";
 import BookingPage from "./pages/BookingPage";
+import Footer from "./components/footer/Footer";
 
 import ProtectedRoute from "./pages/ProtectedRoute";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
@@ -27,6 +28,7 @@ export default function App() {
           }
         ></Route>
       </Routes>
+      <Footer />
     </Router>
   );
 }
