@@ -38,10 +38,11 @@
   top: 20px;
   left: 20px;
   z-index: 1000;
+  width: 20%;
 }
 
 .sidebar {
-  width: 250px;
+  width: 10%;
   background-color: rgb(36, 223, 11);
   position: fixed;
   left: -250px;

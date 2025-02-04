@@ -46,15 +46,17 @@
 }
 
 /* CELL PHONE MEDIA QUERIES */
-@media only screen and (max-width: 375px) {
-}
+@media only screen and (max-width: 375px) {.navbar{background-color: blue;
+}}
 
 /* HORIZONTAL PHONE MEDIA QUERIES */
-@media only screen and (min-width: 376px) and (max-width: 768px) {
+@media only screen and (min-width: 376px) and (max-width: 768px) {.navbar{background-color: blue;
+}
 }
 
 /* TABLET MEDIA QUERIES */
-@media only screen and (min-width: 769px) and (max-width: 1024px) {
+@media only screen and (min-width: 769px) and (max-width: 1024px) {.navbar{background-color: blue;
+}
 }
 
 /* LAPTOP MEDIA QUERIES */
