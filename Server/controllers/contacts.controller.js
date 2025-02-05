@@ -25,7 +25,7 @@ export async function postContact(req,res) {
     
     try {
         await contact.save();
-    res.send('Contact Sent Succesfully')
+    res.send('Message Sent Succesfully')
     } catch (error) {
         console.log(error)
     }

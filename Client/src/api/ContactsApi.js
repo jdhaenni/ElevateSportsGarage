@@ -11,6 +11,12 @@ export const getContacts = async () => {
     }
   };
 
+
+export const createContact = async (contactData) => {
+  const response = await AuthService.post("/contacts", contactData);
+  return response.data;
+};
+
   export const deleteContact = async (id) => {
    try {
     await AuthService.delete(`/contacts/${id}`);
