@@ -1,0 +1,27 @@
+.hero {
+  background-color: black;
+}
+
+.hero-content {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: auto;
+}
+
+.hero-button {
+  width: fit-content;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.hero-button:hover {
+  background-color: rgb(142, 230, 11);
+}
+
+h1 {
+  font-size: 3rem;
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(13, 228, 13);
+}
