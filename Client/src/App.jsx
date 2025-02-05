@@ -8,6 +8,7 @@ import Footer from "./components/footer/Footer";
 
 import ProtectedRoute from "./pages/ProtectedRoute";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import  ContactPage  from './pages/ContactPage';
 
 export default function App() {
   return (
@@ -16,7 +17,7 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/services" element={<ServicesPage />} />
-
+        <Route path="/contact" element={<ContactPage />} />
         <Route path="/booking" element={<BookingPage />} />
 
         <Route
