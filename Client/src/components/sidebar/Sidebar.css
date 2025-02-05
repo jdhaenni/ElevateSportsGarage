@@ -25,8 +25,20 @@
   transition: 0.5s;
 }
 
+.close-button {
+  background: none;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1000;
+}
+
 .sidebar {
-  width: 250px;
+  width: 10%;
   background-color: rgb(36, 223, 11);
   position: fixed;
   left: -250px;

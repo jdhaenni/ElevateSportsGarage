@@ -54,16 +54,16 @@
   justify-content: center;
 }
 
-/* Desktop media queries */
-@media screen and (max-width: 1244px) {
+/* CELL PHONE MEDIA QUERIES */
+@media only screen and (max-width: 375px) {
 }
 
-/* Tablet media queries */
-@media screen and (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-  }
+/* HORIZONTAL PHONE MEDIA QUERIES */
+@media only screen and (min-width: 376px) and (max-width: 768px) {
+}
+
+/* TABLET MEDIA QUERIES */
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
 }
 
 /* Cell phone media queries */

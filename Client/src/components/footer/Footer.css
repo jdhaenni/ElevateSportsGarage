@@ -1,0 +1,47 @@
+/* Footer.css */
+.footer {
+  background-color: #000; /* black background */
+  color: #fff; /* white text by default */
+  padding: 20px;
+  text-align: center;
+}
+
+.footer p {
+  margin-bottom: 10px;
+  color: #51eb14; /* bright green text */
+}
+
+/* Footer links default to white but hover greenish */
+.footer a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+  color: #a0f50c; /* another bright green highlight */
+}
+
+/* Social icons area */
+.footer .social-icons {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.footer .social-icons a {
+  margin: 0 10px;
+  color: #51eb14; /* neon green icons */
+  font-size: 24px;
+  transition: 0.3s;
+}
+
+.footer .social-icons a:hover {
+  color: #a0f50c;
+}
+
+@media (max-width: 600px) {
+  .footer p {
+    margin-bottom: 5px;
+  }
+}

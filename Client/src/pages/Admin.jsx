@@ -13,7 +13,9 @@ import {
   updateReview,
   deleteReview
 } from '../api/ReviewsApi'
+import { getContacts,deleteContact } from '../api/ContactsApi'
 import { useState, useEffect } from 'react'
+
 
 export default function Admin () {
   const [services, setServices] = useState([])
@@ -24,9 +26,48 @@ export default function Admin () {
       setServices(data)
     }
     fetchServices()
-  }, [])
+  }, [services])
 
- 
+  const [serviceFormData, setServiceFormData] = useState({
+    name: '',
+    description: '',
+    price: ''
+  })
+  const [reviewFormData, setReviewFormData] = useState({
+    name: '',
+    date: '',
+    stars: '',
+    body:''
+  })
+  const handleServiceSubmit = async e => {
+    e.preventDefault()
+
+    try {
+      createService(serviceFormData)
+      setServiceFormData({
+        name: '',
+        description: '',
+        price: ''
+      })
+    } catch (error) {
+      console.log(error)
+    }
+  }
+  const handleReviewSubmit = async e => {
+    e.preventDefault()
+
+    try {
+      createReview(reviewFormData)
+      setReviewFormData({
+        name: '',
+        date: '',
+        stars: '',
+        body:""
+      })
+    } catch (error) {
+      console.log(error)
+    }
+  }
 
   const [reviews, setReviews] = useState([])
 
@@ -38,17 +79,56 @@ export default function Admin () {
     fetchReviews()
   }, [reviews])
 
-  
+  const deleteServiceButton = async e => {
+    deleteService(e.target.name)
+  }
 
- const deleteReviewButton = async (e)=>{
+  const deleteReviewButton = async e => {
     deleteReview(e.target.name)
- }
+  }
 
+  const deleteContactButton = async e => {
+    deleteContact(e.target.name)
+  }
+   
+   
+const handleServiceChange = (e) => {
+  setServiceFormData((prev) => ({
+      ...prev,
+      [e.target.name]: e.target.value,
+  }));
+};
+const handleReviewChange = (e) => {
+  setReviewFormData((prev) => ({
+      ...prev,
+      [e.target.name]: e.target.value,
+  }));
+};
+const [contacts,setContacts] = useState([]) 
+useEffect(() => {
+  const getAllContacts = async () => {
+    const data = await getContacts()
+    setContacts(data)
+  }
+  getAllContacts()
+}, [contacts])
 
   return (
     <div>
       SERVICES!<br></br>
-      <button >CREATE</button><br></br>
+      NEW SERVICE<br></br>
+      <form></form> <form onSubmit={handleServiceSubmit}>
+        <label>Service Name</label><br></br>
+        <input type='text' name = 'name' value = {serviceFormData.name} onChange={handleServiceChange}></input><br></br>
+        <label>Description</label><br></br>
+        <input type='text' name = 'description' value = {serviceFormData.description} onChange={handleServiceChange}></input><br></br>
+        <label>Price</label><br></br>
+        <input type='text' name = 'price' value = {serviceFormData.price} onChange={handleServiceChange}></input><br></br>
+        <button type='submit'>Create New Service</button>
+      </form>
+      
+      
+      <br></br>
       <ul>
         {services.map(service => {
           return (
@@ -56,36 +136,81 @@ export default function Admin () {
               <p>
                 {service.name}
                 <br></br>
-                {service.description}<br></br>
-                {service.price}<br></br>
-                <button >UPDATE</button><br></br>
-                <button >DELETE</button><br></br>
+                {service.description}
+                <br></br>
+                {service.price}
+                <br></br>
+                <button>UPDATE</button>
+                <br></br>
+                <button name={service._id} onClick={deleteServiceButton}>
+                  DELETE
+                </button>
+                <br></br>
               </p>
             </li>
           )
         })}
       </ul>
       <ul>
-      REVIEWS!<br></br>
-      <button >CREATE</button><br></br>
+        REVIEWS!<br></br>
+        NEW REVIEW<br></br>
+      <form></form> <form onSubmit={handleReviewSubmit}>
+        <label>Name</label><br></br>
+        <input type='text' name = 'name' value = {reviewFormData.name} onChange={handleReviewChange}></input><br></br>
+        <label>Date</label><br></br>
+        <input type='text' name = 'date' value = {reviewFormData.date} onChange={handleReviewChange}></input><br></br>
+        <label>Stars</label><br></br>
+        <input type='text' name = 'stars' value = {reviewFormData.stars} onChange={handleReviewChange}></input><br></br>
+        <label>Body</label><br></br>
+        <input type='text' name = 'body' value = {reviewFormData.body} onChange={handleReviewChange}></input><br></br>
+        <button type='submit'>Create New Review</button>
+      </form>
+        
+        <br></br>
         {reviews.map(review => {
           return (
             <li key={review._id}>
               <p>
                 {review.name}
                 <br></br>
-                {review.stars}<br></br>
-                {review.date}<br></br>
-                {review.body}<br></br>
-                <button  >UPDATE</button><br></br>
-                <button name={review._id} onClick={deleteReviewButton}>DELETE</button><br></br>
+                {review.stars}
+                <br></br>
+                {review.date}
+                <br></br>
+                {review.body}
+                <br></br>
+                <button>UPDATE</button>
+                <br></br>
+                <button name={review._id} onClick={deleteReviewButton}>
+                  DELETE
+                </button>
+                <br></br>
+              </p>
+            </li>
+          )
+        })}
+      </ul>
+      <ul>
+        CONTACTS!
+      {contacts.map(contact => {
+          return (
+            <li key={contact._id}>
+              <p>
+                {contact.name}
+                <br></br>
+                {contact.email}
+                <br></br>
+                {contact.body}
+                <br></br>
+                <button name={contact._id} onClick={deleteContactButton}>
+                  DELETE
+                </button>
+                <br></br>
               </p>
             </li>
           )
         })}
       </ul>
     </div>
-    
-    
   )
 }

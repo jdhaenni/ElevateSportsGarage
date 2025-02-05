@@ -1,15 +1,15 @@
-import React, { useState } from 'react'
+import React from "react";
 
-const ServiceItem = ({ service, onUpdate, onDelete }) => {
-  const [isEditing, setIsEditing] = useState(false)
-  const [editForm, setEditForm] = useState({
-    name: service.name,
-    description: service.description,
-<<<<<<< HEAD
-    price: service.price
-  })
-}
-=======
-    price: service.price,
-  });
->>>>>>> 52968f00488fac71f779530085d4ac4efcb1bd40
+const ServiceItem = ({ service }) => {
+  const { name, description, price } = service;
+
+  return (
+    <div className="service-item">
+      <h3 className="service-name">{name}</h3>
+      <p className="service-description">{description}</p>
+      <p className="service-price">Price: ${price}</p>
+    </div>
+  );
+};
+
+export default ServiceItem;

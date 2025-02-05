@@ -1,36 +1,34 @@
-import AuthService from "./AuthService";
+import AuthService from "./AuthService"; // import the apiClient
 
-// fetch all services
+// GET: fetch all services
 export const fetchAllServices = async () => {
   try {
-     const response = await AuthService.get("/services");
-    response => response.json
-  return response.data;
-  }
-  catch (error) {
-    
-  }
+    const response = await AuthService.get("/services");
+    (response) => response.json;
+    return response.data;
+  } catch (error) {}
 };
 
-// fetch a single service by id
+// GET: fetch a single service by id
 export const fetchService = async (id) => {
-  const response = await AuthService.get(`/services/${id}`);
-  return response.data;
+  // async function
+  const response = await AuthService.get(`/services/${id}`); // wait for the response
+  return response.data; // return the data
 };
 
-// create a new service (available only to admin)
+// POST: create a new service (available only to admin)
 export const createService = async (serviceData) => {
-  const response = await AuthService.post("/services", serviceData);
+  const response = await AuthService.post("/services", serviceData); // wait for the response
   return response.data;
 };
 
-// update an existing service (available only to admin)
+// PUT: update an existing service (available only to admin)
 export const updateService = async (id, serviceData) => {
-  const response = await AuthService.put(`/services/${id}`, serviceData);
+  const response = await AuthService.put(`/services/${id}`, serviceData); // wait for the response
   return response.data;
 };
 
-// delete an existing service (available only to admin)
+// DELETE: delete an existing service (available only to admin)
 export const deleteService = async (id) => {
-  await AuthService.delete(`/services/${id}`);
+  await AuthService.delete(`/services/${id}`); // wait for the response
 };
