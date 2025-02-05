@@ -1,8 +1,6 @@
 import React from "react";
 import BookingButton from "../booking/BookingButton";
 import QuickContactButton from "../contact/QuickContactButton";
-import "./Hero.css";
-
 const Hero = () => {
   return (
     <div className="hero">
