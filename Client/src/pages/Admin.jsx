@@ -13,8 +13,9 @@ import {
   updateReview,
   deleteReview
 } from '../api/ReviewsApi'
+import { getContacts,deleteContact } from '../api/ContactsApi'
 import { useState, useEffect } from 'react'
-import AuthService from '../api/AuthService'
+
 
 export default function Admin () {
   const [services, setServices] = useState([])
@@ -85,6 +86,11 @@ export default function Admin () {
   const deleteReviewButton = async e => {
     deleteReview(e.target.name)
   }
+
+  const deleteContactButton = async e => {
+    deleteContact(e.target.name)
+  }
+   
    
 const handleServiceChange = (e) => {
   setServiceFormData((prev) => ({
@@ -98,7 +104,14 @@ const handleReviewChange = (e) => {
       [e.target.name]: e.target.value,
   }));
 };
-
+const [contacts,setContacts] = useState([]) 
+useEffect(() => {
+  const getAllContacts = async () => {
+    const data = await getContacts()
+    setContacts(data)
+  }
+  getAllContacts()
+}, [contacts])
 
   return (
     <div>
@@ -169,6 +182,27 @@ const handleReviewChange = (e) => {
                 <button>UPDATE</button>
                 <br></br>
                 <button name={review._id} onClick={deleteReviewButton}>
+                  DELETE
+                </button>
+                <br></br>
+              </p>
+            </li>
+          )
+        })}
+      </ul>
+      <ul>
+        CONTACTS!
+      {contacts.map(contact => {
+          return (
+            <li key={contact._id}>
+              <p>
+                {contact.name}
+                <br></br>
+                {contact.email}
+                <br></br>
+                {contact.body}
+                <br></br>
+                <button name={contact._id} onClick={deleteContactButton}>
                   DELETE
                 </button>
                 <br></br>
