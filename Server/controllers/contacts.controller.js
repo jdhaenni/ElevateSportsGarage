@@ -1,4 +1,14 @@
-import {Contact} from '../models/admin.schema.js';
+import {Contact} from '../models/contact.schema.js';
+
+
+export async function getContacts(req,res) {
+  try {
+     const contacts = await Contact.find({})
+      res.send(contacts)
+  } catch (error) {
+    console.log(error)
+  }
+}
 
 
 export async function postContact(req,res) {
@@ -14,8 +24,8 @@ export async function postContact(req,res) {
     
     
     try {
-        await admin.save();
-    res.send('Contact Sent Succesfully')
+        await contact.save();
+    res.send('Message Sent Succesfully')
     } catch (error) {
         console.log(error)
     }
@@ -28,7 +38,7 @@ export async function deleteContact (req, res) {
   
       // find the service by id
       const contact= await Contact.findById(id)
-  
+      console.log(contact)
       // validation
       if (!contact) {
         return res.status(404).json({
