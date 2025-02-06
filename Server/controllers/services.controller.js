@@ -9,8 +9,12 @@ export async function createService (req, res) {
     price
   })
 
+ try {
   res.send('Service Created Succesfully')
   await service.save()
+ } catch (error) {console.log(error)
+  
+ }
 }
 
 export async function getServices (req, res) {
