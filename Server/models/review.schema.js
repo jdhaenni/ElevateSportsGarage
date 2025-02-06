@@ -10,7 +10,7 @@ const reviewSchema = new mongoose.Schema(
 
       function (value) {
 
-        return value >= 1 && value <= 5;
+        return value >= 1 && value <= 5 && Number.isInteger(value);
 
       },
 

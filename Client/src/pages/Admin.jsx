@@ -122,8 +122,9 @@ const starsFunction = function (numberOfStars){
 
 
   return (
-    <div>
-      SERVICES!<br></br>
+    <div className='container'>
+      <div className='services'>
+      <h1>SERVICES</h1><br></br>
       NEW SERVICE<br></br>
       <form></form> <form onSubmit={handleServiceSubmit}>
         <label>Service Name</label><br></br>
@@ -159,8 +160,10 @@ const starsFunction = function (numberOfStars){
           )
         })}
       </ul>
+      </div>
+      <div classname ="reviews">
       <ul>
-        REVIEWS!<br></br>
+      <h1>REVIEWS</h1><br></br>
         NEW REVIEW<br></br>
       <form></form> <form onSubmit={handleReviewSubmit}>
         <label>Name</label><br></br>
@@ -198,8 +201,10 @@ const starsFunction = function (numberOfStars){
           )
         })}
       </ul>
+      </div>
+      <div className="contacts">
       <ul>
-        CONTACTS!
+        <h1>CONTACTS</h1>
       {contacts.map(contact => {
           return (
             <li key={contact._id}>
@@ -219,6 +224,7 @@ const starsFunction = function (numberOfStars){
           )
         })}
       </ul>
+      </div>
     </div>
   )
 }
