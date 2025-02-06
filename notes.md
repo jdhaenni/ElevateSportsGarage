@@ -12,3 +12,5 @@ jd - admin -update buttons
 jd -admin variable errors
 reviews component/ reviews.stars icons?
 hamburger close after LINK
+
+review.stars iterable array to convert to &#11088;

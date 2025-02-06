@@ -113,6 +113,8 @@ useEffect(() => {
   getAllContacts()
 }, [contacts])
 
+
+
   return (
     <div>
       SERVICES!<br></br>
@@ -173,7 +175,7 @@ useEffect(() => {
               <p>
                 {review.name}
                 <br></br>
-                {review.stars}
+                {review.stars}&#11088;
                 <br></br>
                 {review.date}
                 <br></br>

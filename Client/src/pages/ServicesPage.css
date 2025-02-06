@@ -1,0 +1,11 @@
+.services-page{
+    align-items: center;
+}
+
+.services-title{text-align: center;}
+.services-subtitle{text-align: center;
+margin-bottom: 2%;}
+.services-list{text-align: center;}
+.service-name{
+    font-size: 6vh;
+}
