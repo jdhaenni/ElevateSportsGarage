@@ -5,7 +5,7 @@
 }
 
 .navbar {
-  background-color: rgb(13, 14, 13);
+  background-color: black;
   color: black;
   display: flex;
   justify-content: space-around;
@@ -42,6 +42,7 @@
   font-weight: bold;
   display: flex;
   margin: 0;
+  color: black;
   justify-content: center;
   padding: 10px;
   font-family: "Arial", sans-serif;
@@ -51,6 +52,7 @@
   font-size: 2rem;
   font-family: "Arial", sans-serif;
   display: flex;
+  color: white;
   justify-content: center;
 }
 
