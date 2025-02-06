@@ -1,4 +1,43 @@
 import {Contact} from '../models/contact.schema.js';
+import nodemailer from 'nodemailer';
+
+
+
+
+async function sendEmail(email,body) {
+  // Create a transporter
+  const transporter = nodemailer.createTransport({
+    host: "smtp.gmail.com", 
+    port: 465,
+    secure: true,
+    auth: {
+      user:  process.env.NODEMAIL,
+      pass:  process.env.NODEMAILPASS
+    }
+  });
+
+  // Define email options
+  const mailOptions = {
+    from: email,
+    to: 'jdhaenni@gmail.com',
+    subject: 'Hello from Nodemailer',
+    text: body
+  };
+
+  // Send the email
+  try {
+    const info = await transporter.sendMail(mailOptions);
+    console.log('Email sent:', info.response);
+  } catch (error) {
+    console.error('Error sending email:', error);
+  }
+}
+
+
+
+
+
+
 
 
 export async function getContacts(req,res) {
@@ -21,7 +60,7 @@ export async function postContact(req,res) {
         email,
         body
     })
-    
+    sendEmail(email,body)
     
     try {
         await contact.save();
