@@ -16,3 +16,17 @@ hamburger close after LINK
 review.stars iterable array to convert to &#11088;
 service and review components out side of the admin page?  
 dedicated SMTP/free vs pay  or gmail?
+google maps integration
+
+
+questions
+    before after opening / date
+    photos
+    expectations
+    features what can we do for you
+    any similar websites?
+    meeting times/email
+    tell us about your buisness model
+    priorities of services
+
+

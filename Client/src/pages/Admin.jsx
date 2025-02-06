@@ -15,6 +15,7 @@ import {
 } from '../api/ReviewsApi'
 import { getContacts,deleteContact } from '../api/ContactsApi'
 import { useState, useEffect } from 'react'
+import './Admin.css'
 
 
 export default function Admin () {
@@ -113,6 +114,11 @@ useEffect(() => {
   getAllContacts()
 }, [contacts])
 
+const starsFunction = function (numberOfStars){
+  return(Array.from({ length: numberOfStars }).map((_, index) => (
+    <div className = 'stars' key={index}>&#11088;</div>
+  )))}
+
 
 
   return (
@@ -161,7 +167,7 @@ useEffect(() => {
         <input type='text' name = 'name' value = {reviewFormData.name} onChange={handleReviewChange}></input><br></br>
         <label>Date</label><br></br>
         <input type='text' name = 'date' value = {reviewFormData.date} onChange={handleReviewChange}></input><br></br>
-        <label>Stars</label><br></br>
+        <label>Stars (1-5)</label><br></br>
         <input type='text' name = 'stars' value = {reviewFormData.stars} onChange={handleReviewChange}></input><br></br>
         <label>Body</label><br></br>
         <input type='text' name = 'body' value = {reviewFormData.body} onChange={handleReviewChange}></input><br></br>
@@ -175,7 +181,7 @@ useEffect(() => {
               <p>
                 {review.name}
                 <br></br>
-                {review.stars}&#11088;
+                {starsFunction(review.stars)}
                 <br></br>
                 {review.date}
                 <br></br>
