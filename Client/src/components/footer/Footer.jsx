@@ -13,7 +13,12 @@ export default function Footer() {
     <footer className="footer">
       {" "}
       {/* The footer element has a class name of "footer". */}
-      <div className="footer-logo">{/* logo plzzzz */}</div>{" "}
+      <div className="footer-logo">
+        <img
+          src="https://www.elevatesportsgarage.com/_next/image?url=%2Flogo.png&w=256&q=75"
+          alt="esg logo"
+        />
+      </div>
       {/* The footer contains a logo element. */}
       <div className="footer-details">
         {" "}
