@@ -6,7 +6,6 @@ import SocialProof from '../components/socialProof/SocialProof'
 export default function Home () {
   return (
     <div>
-      <NavBar />
       <Hero />
       <SocialProof />
     </div>
