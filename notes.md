@@ -14,3 +14,5 @@ reviews component/ reviews.stars icons?
 hamburger close after LINK
 
 review.stars iterable array to convert to &#11088;
+service and review components out side of the admin page?  
+dedicated SMTP/free vs pay  or gmail?

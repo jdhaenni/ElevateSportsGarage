@@ -4,7 +4,7 @@ import nodemailer from 'nodemailer';
 
 
 
-async function sendEmail(email,body) {
+async function sendEmail(email,body,name) {
   // Create a transporter
   const transporter = nodemailer.createTransport({
     host: "smtp.gmail.com", 
@@ -20,12 +20,13 @@ async function sendEmail(email,body) {
   const mailOptions = {
     from: email,
     to: 'jdhaenni@gmail.com',
-    subject: 'Hello from Nodemailer',
+    subject: `Message from ${name}-via ElevateSportsGarage.com`,
     text: body
   };
 
   // Send the email
   try {
+    console.log('lol')
     const info = await transporter.sendMail(mailOptions);
     console.log('Email sent:', info.response);
   } catch (error) {
@@ -60,7 +61,7 @@ export async function postContact(req,res) {
         email,
         body
     })
-    sendEmail(email,body)
+    sendEmail(email,body,name)
     
     try {
         await contact.save();
