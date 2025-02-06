@@ -12,7 +12,7 @@ AuthService.interceptors.request.use((config) => {
   if (token) {
     config.headers.Authorization = token;
   }
-  return;
+  return config;
 });
 
 export default AuthService;

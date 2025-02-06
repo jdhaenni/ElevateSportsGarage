@@ -7,14 +7,13 @@ export default function Contact () {
     email: '',
     body: ''
   })
-  const [message, setMessage] = useState('')
+
   const handleContactSubmit = async e => {
     e.preventDefault()
 
     try {
-      const response = createContact(contactFormData)
-      setMessage(response)
-      console.log(message)
+      createContact(contactFormData)
+
       setContactFormData({
         name: '',
         email: '',

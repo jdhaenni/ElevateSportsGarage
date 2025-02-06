@@ -2,8 +2,9 @@ import React from 'react'
 import { loginAdmin } from '../api/LoginApi';
 import {useState } from 'react'
 import { useNavigate } from "react-router-dom";
+import AuthService from '../api/AuthService';
 
-export default function Admin() {
+export default function Login() {
   const navigate = useNavigate()
   const [formData, setFormData] = useState({
     user: "",
@@ -14,8 +15,10 @@ const handleSubmit = async (e) => {
   e.preventDefault();
   console.log(formData)
   try {
+    
 
       const token = await loginAdmin(formData);
+      console.log(token)
       if (!token){return}
 
       localStorage.setItem("token", token);
