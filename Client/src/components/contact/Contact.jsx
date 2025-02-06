@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { createContact } from '../../api/ContactsApi'
+import './Contact.css'
 
 export default function Contact () {
   const [contactFormData, setContactFormData] = useState({
@@ -32,11 +33,11 @@ export default function Contact () {
   }
 
   return (
-    <div>
+    <div className='contact-container'>
       Contact Us!<br></br>
       <form></form>{' '}
       <form onSubmit={handleContactSubmit}>
-        <label>Name</label>
+        <label className='name'>Name</label>
         <br></br>
         <input
           type='text'
@@ -45,7 +46,7 @@ export default function Contact () {
           onChange={handleContactChange}
         ></input>
         <br></br>
-        <label>email</label>
+        <label className='email'>email</label>
         <br></br>
         <input
           type='email'
@@ -54,7 +55,7 @@ export default function Contact () {
           onChange={handleContactChange}
         ></input>
         <br></br>
-        <label>Message</label>
+        <label className='message'>Message</label>
         <br></br>
         <input
           type='text'
