@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { fetchAllReviews } from "../../api/ReviewsApi";
-import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import { FaArrowLeft, FaArrowRight, FaStar } from "react-icons/fa";
 import "./Reviews.css";
 
 const Reviews = () => {

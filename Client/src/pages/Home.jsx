@@ -9,7 +9,7 @@ export default function Home() {
     <div>
       <Hero />
       <SocialProof />
-      <Reviews />
+      <Reviews /> 
     </div>
   );
 }
