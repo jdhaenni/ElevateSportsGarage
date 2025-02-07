@@ -10,9 +10,6 @@ export default function NavBar () {
   return (
     <nav className='navbar'>
       <div className='sidebar-container'>
-        <button onClick={toggleSidebar} className='toggle-button'>
-          <FaBars />
-        </button>
         <Sidebar isOpen={isOpen} toggleSidebar={toggleSidebar} />
       </div>
       <div>
