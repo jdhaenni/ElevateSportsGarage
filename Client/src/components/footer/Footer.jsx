@@ -1,5 +1,11 @@
 import React from "react";
 import "./Footer.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faFacebookF,
+  faInstagram,
+  faTwitter,
+} from "@fortawesome/free-brands-svg-icons";
 
 export default function Footer() {
   // The Footer component is a functional component that renders the footer section of the website.
@@ -7,7 +13,12 @@ export default function Footer() {
     <footer className="footer">
       {" "}
       {/* The footer element has a class name of "footer". */}
-      <div className="footer-logo">{/* logo plzzzz */}</div>{" "}
+      <div className="footer-logo">
+        <img
+          src="https://www.elevatesportsgarage.com/_next/image?url=%2Flogo.png&w=256&q=75"
+          alt="esg logo"
+        />
+      </div>
       {/* The footer contains a logo element. */}
       <div className="footer-details">
         {" "}
@@ -18,22 +29,26 @@ export default function Footer() {
         {/* The contact information is displayed in a paragraph element. */}
       </div>
       <div className="footer-social">
-        {" "}
-        {/* The footer contains a social media section with links to Facebook, Instagram, and Twitter. */}
-        <a href="LINK HERE">
-          <i className="facebook"> Facebook</i>
+        <a
+          href="https://facebook.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <FontAwesomeIcon icon={faFacebookF} size="2x" />
         </a>
-        <a href="LINK HERE">
-          <i className="instagram"> Instagram</i>
+        <a
+          href="https://instagram.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <FontAwesomeIcon icon={faInstagram} size="2x" />
         </a>
-        <a href="LINK HERE">
-          <i className="twitter"> Twitter</i>
+        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+          <FontAwesomeIcon icon={faTwitter} size="2x" />
         </a>
-        <div className="footer-rights">
-          {" "}
-          {/* The footer contains a rights section with copyright information. */}
-          <p>© date here Elevate Sports Garage. All rights reserved.</p>
-        </div>
+
+        {/* The footer contains a rights section with copyright information. */}
+        <p>© date here Elevate Sports Garage. All rights reserved.</p>
       </div>
     </footer>
   );

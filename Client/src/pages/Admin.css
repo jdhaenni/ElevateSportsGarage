@@ -1,0 +1,14 @@
+.stars{display: inline;}
+.container{
+    display:flex;
+    justify-content: space-around;
+}
+.services{
+    width: 25%;
+}
+.reviews{
+    width: 25%;
+}
+.contacts{
+    width: 25%;
+}

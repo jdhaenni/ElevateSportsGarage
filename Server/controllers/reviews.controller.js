@@ -10,8 +10,12 @@ export async function createReview (req, res) {
     body
   })
 
-  res.send('Review Created Succesfully')
-  await review.save()
+ try {
+   res.send('Review Created Succesfully')
+   await review.save()
+ } catch (error) {
+  console.log(error)
+ }
 }
 
 export async function getReviews (req, res) {

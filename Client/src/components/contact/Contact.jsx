@@ -8,14 +8,13 @@ export default function Contact () {
     email: '',
     body: ''
   })
-  const [message, setMessage] = useState('')
+
   const handleContactSubmit = async e => {
     e.preventDefault()
 
     try {
-      const response = createContact(contactFormData)
-      setMessage(response)
-      console.log(message)
+      createContact(contactFormData)
+
       setContactFormData({
         name: '',
         email: '',
@@ -36,6 +35,7 @@ export default function Contact () {
   return (
     <div className='contact-container'>
       Contact Us!<br></br>
+
       <form></form>{' '}
       <form onSubmit={handleContactSubmit}>
         <label className='name'>Name</label>
@@ -47,7 +47,7 @@ export default function Contact () {
           onChange={handleContactChange}
         ></input>
         <br></br>
-        <label className='email'>email</label>
+        <label className='email'>Email</label>
         <br></br>
         <input
           type='email'
@@ -59,6 +59,7 @@ export default function Contact () {
         <label className='message'>Message</label>
         <br></br>
         <input
+        className='body'
           type='text'
           name='body'
           value={contactFormData.body}

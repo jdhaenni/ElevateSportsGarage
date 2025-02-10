@@ -13,8 +13,12 @@ export const getContacts = async () => {
 
 
 export const createContact = async (contactData) => {
-  const response = await AuthService.post("/contacts", contactData);
-  return response.data;
+  try {await AuthService.post("/contacts", contactData);
+    
+    
+  } catch (error) {
+    console.log(error)
+  }
 };
 
   export const deleteContact = async (id) => {

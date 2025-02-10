@@ -15,6 +15,7 @@ import {
 } from '../api/ReviewsApi'
 import { getContacts,deleteContact } from '../api/ContactsApi'
 import { useState, useEffect } from 'react'
+import './Admin.css'
 
 
 export default function Admin () {
@@ -113,9 +114,17 @@ useEffect(() => {
   getAllContacts()
 }, [contacts])
 
+const starsFunction = function (numberOfStars){
+  return(Array.from({ length: numberOfStars }).map((_, index) => (
+    <div className = 'stars' key={index}>&#11088;</div>
+  )))}
+
+
+
   return (
-    <div>
-      SERVICES!<br></br>
+    <div className='container'>
+      <div className='services'>
+      <h1>SERVICES</h1><br></br>
       NEW SERVICE<br></br>
       <form></form> <form onSubmit={handleServiceSubmit}>
         <label>Service Name</label><br></br>
@@ -151,15 +160,17 @@ useEffect(() => {
           )
         })}
       </ul>
+      </div>
+      <div classname ="reviews">
       <ul>
-        REVIEWS!<br></br>
+      <h1>REVIEWS</h1><br></br>
         NEW REVIEW<br></br>
       <form></form> <form onSubmit={handleReviewSubmit}>
         <label>Name</label><br></br>
         <input type='text' name = 'name' value = {reviewFormData.name} onChange={handleReviewChange}></input><br></br>
         <label>Date</label><br></br>
         <input type='text' name = 'date' value = {reviewFormData.date} onChange={handleReviewChange}></input><br></br>
-        <label>Stars</label><br></br>
+        <label>Stars (1-5)</label><br></br>
         <input type='text' name = 'stars' value = {reviewFormData.stars} onChange={handleReviewChange}></input><br></br>
         <label>Body</label><br></br>
         <input type='text' name = 'body' value = {reviewFormData.body} onChange={handleReviewChange}></input><br></br>
@@ -173,7 +184,7 @@ useEffect(() => {
               <p>
                 {review.name}
                 <br></br>
-                {review.stars}
+                {starsFunction(review.stars)}
                 <br></br>
                 {review.date}
                 <br></br>
@@ -190,8 +201,10 @@ useEffect(() => {
           )
         })}
       </ul>
+      </div>
+      <div className="contacts">
       <ul>
-        CONTACTS!
+        <h1>CONTACTS</h1>
       {contacts.map(contact => {
           return (
             <li key={contact._id}>
@@ -211,6 +224,7 @@ useEffect(() => {
           )
         })}
       </ul>
+      </div>
     </div>
   )
 }
