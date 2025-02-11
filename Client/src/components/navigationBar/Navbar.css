@@ -5,18 +5,20 @@
 }
 
 .navbar {
-  background-color: rgb(139, 137, 137);
+  background-color: rgb(128, 126, 126);
   color: black;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
   padding: 20px;
 }
 
 .logo {
+  align-self: center;
   display: flex;
   max-height: 40vh;
-  margin-right: 200px;
+  padding-right: 3vw;
+  
 }
 
 .nav-content {

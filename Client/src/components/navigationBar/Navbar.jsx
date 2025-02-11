@@ -6,7 +6,9 @@ import Sidebar from '../sidebar/Sidebar'
 export default function NavBar () {
   const [isOpen, setIsOpen] = useState(false)
 
-  const toggleSidebar = () => setIsOpen(!isOpen)
+  const toggleSidebar = () => {setIsOpen(!isOpen)
+    console.log(isOpen)
+  }
   return (
     <nav className='navbar'>
       <div className='sidebar-container'>
