@@ -1,30 +1,32 @@
-import React from "react";
+import React from 'react'
 
-import Home from "./pages/Home";
-import Login from "./pages/Login";
-import Admin from "./pages/Admin";
-import ServicesPage from "./pages/ServicesPage";
-import BookingPage from "./pages/BookingPage";
-import Footer from "./components/footer/Footer";
-import NavBar from "./components/navigationBar/Navbar";
+import Home from './pages/Home'
+import Login from './pages/Login'
+import Admin from './pages/Admin'
+import ServicesPage from './pages/ServicesPage'
+import BookingPage from './pages/BookingPage'
+import Proshop from './pages/Proshop'
+import Footer from './components/footer/Footer'
+import NavBar from './components/navigationBar/Navbar'
 
-import ProtectedRoute from "./pages/ProtectedRoute";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import ContactPage from "./pages/ContactPage";
+import ProtectedRoute from './pages/ProtectedRoute'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import ContactPage from './pages/ContactPage'
 
-export default function App() {
+export default function App () {
   return (
     <Router>
       <NavBar />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/services" element={<ServicesPage />} />
-        <Route path="/contact" element={<ContactPage />} />
-        <Route path="/booking" element={<BookingPage />} />
+        <Route path='/' element={<Home />} />
+        <Route path='/login' element={<Login />} />
+        <Route path='/services' element={<ServicesPage />} />
+        <Route path='/contact' element={<ContactPage />} />
+        <Route path='/booking' element={<BookingPage />} />
+        <Route path='/proshop' element={<Proshop />} />
 
         <Route
-          path="/protected"
+          path='/protected'
           element={
             <ProtectedRoute>
               <Admin />
@@ -34,5 +36,5 @@ export default function App() {
       </Routes>
       <Footer />
     </Router>
-  );
+  )
 }
