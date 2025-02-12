@@ -8,7 +8,7 @@ const BookingButton = ({ label }) => {
 
   const handleBooking = () => {
     // The handleBooking function is defined to handle the button click event.
-    navigate("/booking"); // The handleBooking function uses the navigate function from the useNavigate hook to redirect the user to the "/booking" route when the button is clicked.
+    navigate("/services"); // The navigate function is called with the "/services" route as an argument to navigate to the services page when the button is clicked.
   };
 
   return (

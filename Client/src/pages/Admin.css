@@ -1,14 +1,16 @@
-.stars{display: inline;}
-.container{
-    display:flex;
-    justify-content: space-around;
+.stars {
+  display: inline;
 }
-.services{
-    width: 25%;
+.container {
+  display: flex;
+  justify-content: space-around;
 }
-.reviews{
-    width: 25%;
+.services {
+  width: 25%;
 }
-.contacts{
-    width: 25%;
+.reviews {
+  width: 25%;
+}
+.contacts {
+  width: 25%;
 }
