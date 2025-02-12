@@ -5,18 +5,20 @@
 }
 
 .navbar {
-  background-color: black;
+  background-color: rgb(128, 126, 126);
   color: black;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   padding: 20px;
 }
 
 .logo {
+  align-self: center;
   display: flex;
-  align-items: center;
   max-height: 40vh;
+  padding-right: 3vw;
+  
 }
 
 .nav-content {
@@ -27,14 +29,7 @@
   background-color: rgb(36, 223, 11);
   padding: 10px;
   border-radius: 10px;
-}
-
-.toggle-button {
-  color: rgb(10, 238, 10);
-  width: 100%;
-  font-size: x-large;
-  padding: 5px;
-  margin-right: 2rem;
+  box-shadow: inset 0 0 10px #000000;
 }
 
 .site-title {
@@ -46,6 +41,7 @@
   justify-content: center;
   padding: 10px;
   font-family: "Arial", sans-serif;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .tagline {
@@ -70,11 +66,7 @@
 
 /* Cell phone media queries */
 @media screen and (max-width: 480px) {
-  .site-title {
-    font-size: 1.5em;
-  }
-
-  .tagline {
-    font-size: 0.8em;
+  .nav-content {
+    display: none;
   }
 }

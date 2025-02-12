@@ -25,9 +25,12 @@
   transition: 0.5s;
 }
 
-.close-button {
+.hamburger {
+  /* display: none; */
+  color: #0c0c0c;
+  right: 20px;
+  top: 20px;
   background: none;
-  color: #fff;
   border: none;
   cursor: pointer;
   font-size: 24px;
@@ -35,36 +38,41 @@
 }
 
 .sidebar {
-  width: 10%;
-  background-color: rgb(36, 223, 11);
+  background-color: rgb(71, 223, 11);
   position: fixed;
   right: -250px;
-  transition: left 0.3s ease;
+  top: 0;
+  height: 100%;
+  width: 250px;
+  color: black;
+  transition: right 0.3s ease;
+  z-index: 1000; /* Ensure the sidebar is on top of other elements */
 }
 
 .sidebar.open {
-  left: 0;
+  right: 0;
 }
 
-/* Desktop media queries */
-@media screen and (max-width: 1244px) {
+.close-button {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  color: #fff;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
 }
-
-/* Tablet media queries */
-@media screen and (max-width: 768px) {
-  .sidebar {
-    width: 60%;
-    text-align: center;
-  }
-
-  .sidebar li {
-    margin: 10px auto;
-  }
-}
-
-/* Cell phone media queries */
 @media screen and (max-width: 480px) {
-  .sidebar li {
-    margin-left: 0;
+  .close-button {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: #ffffff;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
   }
 }
+ 

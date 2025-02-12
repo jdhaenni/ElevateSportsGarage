@@ -1,4 +1,6 @@
 .reviews-container {
+  display: flex;
+  flex-direction: column;
   max-width: 600px;
   margin: 2rem auto;
   padding: 1rem;
@@ -8,6 +10,9 @@
   border: 1px solid #333;
   border-radius: 6px;
   box-shadow: 0 2px 8px rgba(0, 255, 0, 0.1);
+  justify-content: center;
+  align-items: center;
+  align-content: center;
 }
 
 .no-reviews {
@@ -29,6 +34,7 @@
   justify-content: center;
   position: relative;
   margin-bottom: 1rem;
+  width: 90%;
 }
 
 .review-card {
@@ -36,6 +42,7 @@
   min-height: 200px;
   padding: 1rem;
   text-align: center;
+  width: 20vh;
 }
 
 .review-name {

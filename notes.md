@@ -29,4 +29,29 @@ questions
     tell us about your buisness model
     priorities of services
 
+chris git
 
+
+template literal on nodemailer!
+
+memberships
+proshop
+proshop
+products instead of reviews
+
+professional reviews
+testimonials page
+
+
+
+email
+
+    Socials
+    address
+    phone number
+    email
+    testimonilas
+    photos
+    videos
+    proshop 3rd party link/items
+    DEATIALED SERVICES
