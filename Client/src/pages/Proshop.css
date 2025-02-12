@@ -6,10 +6,13 @@
 }
 
 .proshop-subtitle {
-  font-size: 1.2rem;
-  margin: 20px;
+  font-size: 1.5rem;
+  padding: 1%;
   text-align: center;
   color: black;
+  background-color: darkgray;
+  text-shadow: 2px 2px 4px rgba(245, 244, 244, 0.664);
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
 .products-container {
@@ -17,8 +20,31 @@
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  padding: 20px;
-  background-color: black;
-  color: white;
+  padding: 30px;
+  color: black;
+  background-color: darkgray;
+  width: 100%;
   text-align: center;
+}
+
+.add-to-cart {
+  background-color: #51eb14;
+  color: #000;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.add-to-cart:hover {
+  background-color: #f0d56c;
+}
+
+.add-to-cart:active {
+  background-color: #f0d56c;
+  transform: translateY(2px);
 }
