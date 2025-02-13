@@ -1,13 +1,19 @@
-.services-page{
-    align-items: center;
-    margin-left: 25%;
-    margin-right: 25%;
+.services-page {
+  align-items: center;
+  margin-left: 25%;
+  margin-right: 25%;
 }
 
-.services-title{text-align: center;}
-.services-subtitle{text-align: center;
-margin-bottom: 2%;}
-.services-list{text-align: center;}
-.service-name{
-    font-size: 6vh;
+.services-title {
+  text-align: center;
+}
+.services-subtitle {
+  text-align: center;
+  margin-bottom: 2%;
+}
+.services-list {
+  text-align: center;
+}
+.service-name {
+  font-size: 6vh;
 }
