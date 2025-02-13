@@ -4,7 +4,6 @@ import Home from './pages/Home'
 import Login from './pages/Login'
 import Admin from './pages/Admin'
 import ServicesPage from './pages/ServicesPage'
-import BookingPage from './pages/BookingPage'
 import Footer from './components/footer/Footer'
 import NavBar from './components/navigationBar/Navbar'
 
@@ -21,7 +20,6 @@ export default function App () {
         <Route path='/login' element={<Login />} />
         <Route path='/services' element={<ServicesPage />} />
         <Route path='/contact' element={<ContactPage />} />
-        <Route path='/booking' element={<BookingPage />} />
 
         <Route
           path='/protected'
