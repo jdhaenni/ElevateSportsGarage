@@ -1,6 +1,9 @@
 import React from "react";
 import "./Hero.css";
 
+import QuickContactButton from "../contact/QuickContactButton";
+import "../contact/QuickContactButton.css";
+
 const Hero = () => {
   return (
     <section className="hero-section">
@@ -73,9 +76,11 @@ const Hero = () => {
       </div>
 
       <div className="hero-cta">
-        <a href="/booking" className="cta-button">
+        <a href="/services" className="cta-button">
           Start Training Now!
         </a>
+
+        <QuickContactButton label="Contact Us" />
       </div>
     </section>
   );

@@ -129,6 +129,9 @@
   }
 
   .footer-social a {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
     margin-bottom: 10px;
   }
 
@@ -146,7 +149,15 @@
     font-size: 14px;
   }
 
+  .footer-social {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+
   .footer-social a {
     padding: 12px;
+    margin: 0;
   }
 }

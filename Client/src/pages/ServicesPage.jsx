@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { fetchAllServices } from "../api/ServicesApi";
 import ServiceItem from "../components/services/ServiceItem";
-import './ServicesPage.css' 
+import "./ServicesPage.css";
 
 const ServicesPage = () => {
   const [services, setServices] = useState([]);
@@ -29,6 +29,20 @@ const ServicesPage = () => {
         {services.map((service) => (
           <ServiceItem key={service._id} service={service} />
         ))}
+      </div>
+
+      <div className="vagaro-link-container">
+        <p className="vagaro-cta-text">
+          Ready to book a session? Click below to schedule a session!
+        </p>
+        <a
+          href="https://www.vagaro.com/cl/DaQegUQ305Bsr6sFBZ4B3jH0uGERbapdqFbSl~Zgo8s="
+          target="_blank"
+          rel="noopener noreferrer"
+          className="vagaro-button"
+        >
+          Book Now!
+        </a>
       </div>
     </div>
   );

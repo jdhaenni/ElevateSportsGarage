@@ -1,13 +1,11 @@
 import React from 'react'
 
-import Home from './pages/Home'
-import Login from './pages/Login'
-import Admin from './pages/Admin'
-import ServicesPage from './pages/ServicesPage'
-import BookingPage from './pages/BookingPage'
-import Proshop from './pages/Proshop'
-import Footer from './components/footer/Footer'
-import NavBar from './components/navigationBar/Navbar'
+import Home from "./pages/Home";
+import Login from "./pages/Login";
+import Admin from "./pages/Admin";
+import ServicesPage from "./pages/ServicesPage";
+import Footer from "./components/footer/Footer";
+import NavBar from "./components/navigationBar/Navbar";
 
 import ProtectedRoute from './pages/ProtectedRoute'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
@@ -18,12 +16,10 @@ export default function App () {
     <Router>
       <NavBar />
       <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/login' element={<Login />} />
-        <Route path='/services' element={<ServicesPage />} />
-        <Route path='/contact' element={<ContactPage />} />
-        <Route path='/booking' element={<BookingPage />} />
-        <Route path='/proshop' element={<Proshop />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/services" element={<ServicesPage />} />
+        <Route path="/contact" element={<ContactPage />} />
 
         <Route
           path='/protected'
