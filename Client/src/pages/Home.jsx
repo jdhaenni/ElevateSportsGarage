@@ -3,13 +3,15 @@ import NavBar from "../components/navigationBar/Navbar";
 import Hero from "../components/hero/Hero";
 import SocialProof from "../components/socialProof/SocialProof";
 import Reviews from "../components/reviews/Reviews";
+import LocationMap from "../components/LocationMap/LocationMap";
 
 export default function Home() {
   return (
     <div>
       <Hero />
       <SocialProof />
-      <Reviews /> 
+      <Reviews />
+      <LocationMap />
     </div>
   );
 }
