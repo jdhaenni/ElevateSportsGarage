@@ -1,12 +1,13 @@
 import { Service } from '../models/service.schema.js'
 
 export async function createService (req, res) {
-  const { name, description, price } = req.body
+  const { name, description, price,image } = req.body
 
   const service = new Service({
     name,
     description,
-    price
+    price,
+    image
   })
 
  try {
@@ -45,7 +46,7 @@ export async function updateService (req, res) {
     const { id } = req.params
 
     // destructure the request body
-    const { name, description, price } = req.body
+    const { name, description, price,image } = req.body
 
     // find the service by id
     const service = await Service.findById(id)
@@ -62,6 +63,7 @@ export async function updateService (req, res) {
     service.name = name
     service.description = description
     service.price = price
+    service.image = image
 
     // save the post
     await service.save()

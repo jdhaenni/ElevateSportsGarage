@@ -14,3 +14,12 @@
 .contacts {
   width: 25%;
 }
+
+/* Cell phone media queries */
+@media screen and (max-width: 480px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+}

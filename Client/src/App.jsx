@@ -10,7 +10,6 @@ import NavBar from "./components/navigationBar/Navbar";
 import ProtectedRoute from "./pages/ProtectedRoute";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import ContactPage from "./pages/ContactPage";
-import LocationMap from "./components/LocationMap/LocationMap";
 
 export default function App() {
   return (

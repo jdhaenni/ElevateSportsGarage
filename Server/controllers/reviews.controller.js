@@ -1,13 +1,15 @@
 import { Review } from '../models/review.schema.js'
 
 export async function createReview (req, res) {
-  const { name, date, stars, body } = req.body
+  const { name, date, stars, body,image,featured } = req.body
 
   const review = new Review({
     name, 
     date,
     stars,
-    body
+    body,
+    image,
+    featured
   })
 
  try {
@@ -46,7 +48,7 @@ export async function updateReview (req, res) {
     const { id } = req.params
 
     // destructure the request body
-    const { name, date, stars, body } = req.body
+    const { name, date, stars, body,image,featured } = req.body
 
     // find the service by id
     const review = await Review.findById(id)
@@ -64,6 +66,8 @@ export async function updateReview (req, res) {
     review.date = date
     review.stars = stars
     review.body = body
+    review.image =image
+    review.featured=featured
 
     // save the post
     await review.save()
