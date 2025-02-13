@@ -9,6 +9,7 @@ import ServicesRoute from "./routes/services.route.js";
 import ReviewsRoute from "./routes/reviews.route.js";
 import ContactsRoute from "./routes/contacts.route.js";
 import ProductsRoute from './routes/products.route.js'
+import HoursRoute from './routes/hours.route.js'
 import cors from "cors";
 
 connect();
@@ -24,7 +25,8 @@ app.use("/", AdminRoute);
 app.use("/", ServicesRoute);
 app.use("/", ReviewsRoute);
 app.use("/", ContactsRoute);
-app.use("/", ProductsRoute)
+app.use("/", ProductsRoute);
+app.use("/",HoursRoute);
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
