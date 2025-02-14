@@ -26,7 +26,7 @@ app.use("/", ServicesRoute);
 app.use("/", ReviewsRoute);
 app.use("/", ContactsRoute);
 app.use("/", ProductsRoute);
-app.use("/",HoursRoute);
+app.use("/", HoursRoute);
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
