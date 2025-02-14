@@ -14,16 +14,32 @@ export default function Sidebar ({ isOpen, toggleSidebar }) {
         </button>
         <ul>
           <li>
-            <Link to='/'><button className='link' onClick={toggleSidebar}>Home</button></Link>
+            <Link to='/'>
+              <button className='link' onClick={toggleSidebar}>
+                Home
+              </button>
+            </Link>
           </li>
           <li>
-            <Link to='/services'><button className='link' onClick={toggleSidebar}>Services</button></Link>
+            <Link to='/services'>
+              <button className='link' onClick={toggleSidebar}>
+                Services
+              </button>
+            </Link>
           </li>
           <li>
-            <Link to='/contact'><button className='link' onClick={toggleSidebar}>Contact</button></Link>
+            <Link to='/contact'>
+              <button className='link' onClick={toggleSidebar}>
+                Contact
+              </button>
+            </Link>
           </li>
           <li>
-            <Link to='/proshop'>Pro Shop</Link>
+            <Link to='/proshop'>
+              <button className='link' onClick={toggleSidebar}>
+                Pro Shop
+              </button>
+            </Link>
           </li>
         </ul>
       </div>

@@ -50,24 +50,45 @@ const products = [
 
 export default function Proshop () {
   return (
-    <div>
-      <h1 className='proshop-header'>
-        Welcome to the Elevate Sports Garage Proshop!
-      </h1>
-      <p className='proshop-subtitle'>
-        Where you can find the best equipment for your game!
-      </p>
-      <div className='products-container'>
-        {products.map(product => (
-          <div key={product.id} className='product'>
-            <h2>{product.image}</h2>
-            <h3>{product.name}</h3>
-            <p>${product.price}</p>
-            <button onClick={() => addToCart(product)} className='add-to-cart'>
-              Add to Cart
-            </button>
-          </div>
-        ))}
+    <div className='proshop-page'>
+      <div className='content-container'>
+        <div className='image-section'>
+          <img
+            src='https://media.istockphoto.com/id/1314882259/photo/strong-baseball.jpg?s=612x612&w=0&k=20&c=Um_nVEvk1jfdP0OduFhVRVH8JCtYa0CVAA9h89m15ZY='
+            alt='batting cage photo'
+          />
+        </div>
+        <div className='message-section'>
+          <h1>Welcome to the Pro Shop!</h1>
+          <p>
+            Welcome to Elevate Sports Garage, your premier destination for
+            indoor baseball and softball training.
+            <br />
+            Our state-of-the-art facility is designed to provide athletes of all
+            ages and skill levels with the perfect environment to hone their
+            skills. We offer high-quality batting cages equipped with the latest
+            technology to track performance and improve batting techniques. Our
+            experienced staff is dedicated to helping you elevate your game,
+            whether you're a beginner looking to learn the basics or an advanced
+            player aiming for the next level.
+            <br />
+            Join us and experience the excitement of training in a safe,
+            controlled environment, rain or shine. Let's swing for success
+            together!
+          </p>
+        </div>
+        <div className='featured-product'>
+          <h2>Featured Product</h2>
+          <p>Check out our signature Elevate Sports Garage Batting Gloves!</p>
+          <img
+            className='batting-gloves'
+            src='https://vafloc02.s3.amazonaws.com/isyn/images/f614/img-4308614-m.jpg'
+            alt='batting gloves'
+          />
+          <a href='link-to-shop' className='shop-link'>
+            Shop Now!
+          </a>
+        </div>
       </div>
     </div>
   )
