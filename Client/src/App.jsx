@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 
 import Home from './pages/Home'
 import Login from './pages/Login'
@@ -8,11 +8,11 @@ import Footer from './components/footer/Footer'
 import NavBar from './components/navigationBar/Navbar'
 import Proshop from './pages/Proshop'
 
-import ProtectedRoute from './pages/ProtectedRoute'
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
-import ContactPage from './pages/ContactPage'
+import ProtectedRoute from "./pages/ProtectedRoute";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import ContactPage from "./pages/ContactPage";
 
-export default function App () {
+export default function App() {
   return (
     <Router>
       <NavBar />
@@ -23,7 +23,7 @@ export default function App () {
         <Route path='/contact' element={<ContactPage />} />
         <Route path='/proshop' element={<Proshop />} />
         <Route
-          path='/protected'
+          path="/protected"
           element={
             <ProtectedRoute>
               <Admin />
@@ -31,7 +31,8 @@ export default function App () {
           }
         ></Route>
       </Routes>
+
       <Footer />
     </Router>
-  )
+  );
 }

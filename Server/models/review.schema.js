@@ -17,7 +17,9 @@ const reviewSchema = new mongoose.Schema(
       'Rating must be between 1 and 5'
 
     ]},
-    body: {type:String,required:true}
+    body: {type:String,required:true},
+    image:{type:String,required:false},
+    featured:{type:Boolean,required:false}
   }
 )
 
