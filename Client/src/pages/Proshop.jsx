@@ -59,7 +59,7 @@ export default function Proshop () {
           />
         </div>
         <div className='message-section'>
-          <h1>Welcome to the Pro Shop!</h1>
+          <h1 className='welcome-message'>Welcome to the Pro Shop!</h1>
           <p>
             Welcome to Elevate Sports Garage, your premier destination for
             indoor baseball and softball training.
@@ -78,8 +78,8 @@ export default function Proshop () {
           </p>
         </div>
         <div className='featured-product'>
-          <h2>Featured Product</h2>
-          <p>Check out our signature Elevate Sports Garage Batting Gloves!</p>
+          <h2 className='product-title'>Featured Product</h2>
+          <p>Check out our signature ESG Batting Gloves!</p>
           <img
             className='batting-gloves'
             src='https://vafloc02.s3.amazonaws.com/isyn/images/f614/img-4308614-m.jpg'
