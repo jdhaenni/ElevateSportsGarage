@@ -1,5 +1,8 @@
 import {Product} from '../models/product.schema.js'
-import { v2 as cloudinary } from 'cloudinary'
+
+
+
+
 
 export async function createProduct (req, res) {
   const { name, description, price, image } = req.body
@@ -13,6 +16,8 @@ export async function createProduct (req, res) {
     image,
     featured:false
   })
+
+  uploadImage
 
  try {
   res.send('Product Created Succesfully')
