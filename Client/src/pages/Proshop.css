@@ -60,6 +60,8 @@
 .batting-gloves {
   flex: 1;
   align-items: center;
+  padding: 10px;
+  display: flex;
   justify-content: center;
   max-width: 18rem;
 }
@@ -76,6 +78,7 @@
 
 .shop-link:hover {
   background-color: darkgray;
+  transform: translateY(-2px);
 }
 
 /* Mobile phone media query */

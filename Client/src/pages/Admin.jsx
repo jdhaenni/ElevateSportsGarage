@@ -17,6 +17,7 @@ import { getContacts,deleteContact } from '../api/ContactsApi'
 import { useState, useEffect } from 'react'
 import './Admin.css'
 import AdminHours from '../components/admin/AdminHours'
+import ImageUpload from '../components/ImageUpload'
 
 
 export default function Admin () {
@@ -28,7 +29,6 @@ export default function Admin () {
       setServices(data)
     }
     fetchServices()
-    console.log(services)
   }, [services])
 
   const [serviceFormData, setServiceFormData] = useState({
@@ -229,6 +229,7 @@ const starsFunction = function (numberOfStars){
       
       </div>
       <AdminHours />
+      <ImageUpload />
     </div>
   )
 }
