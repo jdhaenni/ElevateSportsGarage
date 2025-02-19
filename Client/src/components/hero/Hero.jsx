@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Hero.css";
 
 import QuickContactButton from "../contact/QuickContactButton";
@@ -9,6 +9,7 @@ const Hero = () => {
     <section className="hero-section">
       <div className="hero-header">
         <p className="join-now">JOIN US NOW</p>
+        <QuickContactButton label="Contact Us" />
         <h1 className="hero-title">ELEVATE YOUR GAME</h1>
         <p className="hero-subtitle"> Secure Your Membership!</p>
       </div>
@@ -86,4 +87,34 @@ const Hero = () => {
   );
 };
 
-export default Hero;
+export default function JazzHero() {
+  useEffect(() => {
+    if (window.innerWidth >= 480) return;
+    const cards = document.querySelectorAll(".membership-card");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("expanded-mobile");
+          } else {
+            entry.target.classList.remove("expanded-mobile");
+          }
+        });
+      },
+      {
+        threshold: 0.5,
+      }
+    );
+    cards.forEach((card) => {
+      observer.observe(card);
+    });
+    return () => {
+      cards.forEach((card) => {
+        observer.unobserve(card);
+      });
+    };
+  }, []);
+
+  return <Hero />;
+}
