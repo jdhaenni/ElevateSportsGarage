@@ -86,10 +86,10 @@ const Hero = () => {
     </section>
   );
 };
-
 export default function JazzHero() {
   useEffect(() => {
-    if (window.innerWidth >= 480) return;
+    if (window.innerWidth > 480) return;
+
     const cards = document.querySelectorAll(".membership-card");
 
     const observer = new IntersectionObserver(
@@ -102,17 +102,13 @@ export default function JazzHero() {
           }
         });
       },
-      {
-        threshold: 0.5,
-      }
+      { threshold: 0.5 }
     );
-    cards.forEach((card) => {
-      observer.observe(card);
-    });
+
+    cards.forEach((card) => observer.observe(card));
+
     return () => {
-      cards.forEach((card) => {
-        observer.unobserve(card);
-      });
+      cards.forEach((card) => observer.unobserve(card));
     };
   }, []);
 
