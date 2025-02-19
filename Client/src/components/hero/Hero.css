@@ -266,11 +266,21 @@ h1 {
   .hero-title {
     font-size: 2rem;
   }
-
   .membership-card {
     max-height: 80px;
-    transition: max-height 0.7s cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition: max-height 0.6s cubic-bezier(0.25, 0.8, 0.25, 1),
+      opacity 0.4s ease;
     overflow: hidden;
+    opacity: 0.7;
+    transform: scale(0.98);
+  }
+
+  .membership-card.expanded-mobile {
+    max-height: 600px;
+    opacity: 1;
+    transform: scale(1);
+    transition: max-height 0.6s cubic-bezier(0.25, 0.8, 0.25, 1),
+      opacity 0.4s ease, transform 0.4s ease;
   }
 
   .membership-title {
@@ -281,8 +291,8 @@ h1 {
   .membership-details,
   .limited-offer {
     opacity: 1;
-    transform: translateY(20px);
-    transition: opacity 0.4s ease, transform 0.4s ease;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
     transition-delay: 0.1s;
   }
 
@@ -293,8 +303,8 @@ h1 {
     width: 80%;
     margin: 0 auto;
     opacity: 1;
-    transform: translateY(20px);
-    transition: opacity 0.4s ease, transform 0.4s ease;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
     transition-delay: 0.1s;
   }
 
@@ -306,7 +316,7 @@ h1 {
   .membership-card:not(.expanded-mobile) .membership-price,
   .membership-card:not(.expanded-mobile) .limited-offer {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(10px);
   }
 
   .membership-card.expanded-mobile .membership-details,
@@ -314,6 +324,6 @@ h1 {
   .membership-card.expanded-mobile .limited-offer {
     opacity: 1;
     transform: translateY(0);
-    transition-delay: 0.1s;
+    transition-delay: 0.2s;
   }
 }
