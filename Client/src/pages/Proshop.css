@@ -1,50 +1,104 @@
-.proshop-header {
-  text-align: center;
-  background-color: black;
-  padding: 20px;
-  text-shadow: 2px 2px 4px rgba(245, 244, 244, 0.664);
-}
-
-.proshop-subtitle {
-  font-size: 1.5rem;
-  padding: 1%;
-  text-align: center;
-  color: black;
-  background-color: darkgray;
-  text-shadow: 2px 2px 4px rgba(245, 244, 244, 0.664);
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-}
-
-.products-container {
+.proshop-page {
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+  flex-direction: column;
   align-items: center;
-  padding: 30px;
-  color: black;
-  background-color: darkgray;
+  padding: 20px;
+  background-color: black;
+  color: white;
+}
+
+.content-container {
+  display: flex;
+  justify-content: space-between;
   width: 100%;
+}
+
+.welcome-message {
+  animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.image-section {
+  flex: 1;
+  padding: 10px;
+}
+
+.message-section {
+  flex: 1;
   text-align: center;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.add-to-cart {
-  background-color: #51eb14;
-  color: #000;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 16px;
-  transition: background-color 0.3s ease;
+.featured-product {
   margin-top: 20px;
-  margin-bottom: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.add-to-cart:hover {
-  background-color: #f0d56c;
+.product-title {
+  font-size: 40px;
+  margin-bottom: 10px;
+  color: #51eb14;
 }
 
-.add-to-cart:active {
-  background-color: #f0d56c;
-  transform: translateY(2px);
+.batting-gloves {
+  flex: 1;
+  align-items: center;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  max-width: 18rem;
+}
+
+.shop-link {
+  /* display: inline-block; */
+  padding: 10px 20px;
+  background-color: #3df006;
+  color: black;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.shop-link:hover {
+  background-color: darkgray;
+  transform: translateY(-2px);
+}
+
+/* Mobile phone media query */
+@media screen and (max-width: 450px) {
+  .content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  img {
+    width: 300px;
+  }
+}
+
+/* Tablet media query */
+@media screen and (min-width: 451px) and (max-width: 1024px) {
+  .content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }

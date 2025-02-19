@@ -16,6 +16,8 @@ import {
 import { getContacts,deleteContact } from '../api/ContactsApi'
 import { useState, useEffect } from 'react'
 import './Admin.css'
+import AdminHours from '../components/admin/AdminHours'
+import ImageUpload from '../components/ImageUpload'
 
 
 export default function Admin () {
@@ -224,7 +226,10 @@ const starsFunction = function (numberOfStars){
           )
         })}
       </ul>
+      
       </div>
+      <AdminHours />
+      <ImageUpload />
     </div>
   )
 }
