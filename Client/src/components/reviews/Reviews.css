@@ -1,18 +1,16 @@
 .reviews-container {
   display: flex;
   flex-direction: column;
-  max-width: 600px;
+  max-width: 700px;
   margin: 2rem auto;
   padding: 1rem;
-  text-align: center;
   background-color: #000;
   color: #fff;
   border: 1px solid #333;
   border-radius: 6px;
   box-shadow: 0 2px 8px rgba(0, 255, 0, 0.1);
-  justify-content: center;
+
   align-items: center;
-  align-content: center;
 }
 
 .no-reviews {
@@ -20,35 +18,43 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  text-align: center;
 }
 
 .reviews-title {
   font-size: 1.5rem;
   margin-bottom: 1rem;
   color: #51eb14;
+  text-align: center;
 }
 
 .reviews {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   position: relative;
   margin-bottom: 1rem;
-  width: 90%;
+  width: 100%;
 }
 
 .review-card {
-  flex: 1 1 100%;
+  flex: 1;
   min-height: 200px;
   padding: 1rem;
-  text-align: center;
-  width: 20vh;
+  width: auto;
+  text-align: left;
+  margin: 0 1rem;
+  border: 1px solid #444;
+  border-radius: 6px;
+  background-color: #111;
+  box-shadow: 0 2px 6px rgba(0, 255, 0, 0.1);
 }
 
 .review-name {
   font-size: 1.2rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.25rem;
   color: #51eb14;
+  font-weight: bold;
 }
 
 .review-stars {
@@ -58,6 +64,7 @@
 .star {
   font-size: 1rem;
   margin: 0 2px;
+  color: gold;
 }
 
 .review-date {
@@ -69,7 +76,7 @@
 .review-text {
   color: #ccc;
   font-size: 1rem;
-  line-height: 1.4;
+  line-height: 1.5;
 }
 
 .arrow-btn {
@@ -95,15 +102,20 @@
 }
 
 @media (max-width: 600px) {
-  .review-card {
-    padding: 0.5rem;
-  }
-
   .reviews-title {
     font-size: 1.3rem;
   }
 
+  .review-card {
+    padding: 0.75rem;
+    margin: 0 0.5rem;
+  }
+
   .star {
-    font-size: 0.9rem;
+    font-size: 1rem;
+  }
+
+  .arrow-btn {
+    font-size: 1.5rem;
   }
 }
