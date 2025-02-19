@@ -1,9 +1,12 @@
-import { Product } from '../models/product.schema.js'
+import {Product} from '../models/product.schema.js'
+import { v2 as cloudinary } from 'cloudinary'
 
 export async function createProduct (req, res) {
   const { name, description, price, image } = req.body
 
-  const product = new Service({
+
+
+  const product = new Product({
     name,
     description,
     price,
@@ -20,7 +23,7 @@ export async function createProduct (req, res) {
 }
 
 export async function getProducts (req, res) {
-  const products = await Products.find({})
+  const products = await Product.find({})
   res.send(products)
 }
 
@@ -71,7 +74,7 @@ export async function updateProduct (req, res) {
     await product.save()
 
     // send the success response
-    res.status(200).json(service)
+    res.status(200).json(product)
   } catch (error) {
     console.log(error)
   }
