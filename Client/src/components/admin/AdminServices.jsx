@@ -32,8 +32,9 @@ export default function AdminServices () {
     formData.append('file', createServiceIMG)
     formData.append('upload_preset', 'ESGimg')
     setCreateServiceIMG(null)
-
+    
     try {
+      if (createServiceIMG != null){
       const response = await axios.post(
         'https://api.cloudinary.com/v1_1/dlcaybqqy/image/upload',
         formData
@@ -44,7 +45,7 @@ export default function AdminServices () {
         ...prevData,
         image: secure_url
       }));
-      
+    }
       setServiceFormData(prevData => {
         createService(prevData)  // Now calling createService with the updated state
         return {

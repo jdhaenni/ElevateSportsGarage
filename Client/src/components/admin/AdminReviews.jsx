@@ -28,6 +28,8 @@ export default function AdminReviews () {
     setCreateReviewIMG(null)
 
     try {
+
+      if (createReviewIMG != null){
       const response = await axios.post(
         'https://api.cloudinary.com/v1_1/dlcaybqqy/image/upload',
         formData
@@ -38,7 +40,7 @@ export default function AdminReviews () {
         ...prevData,
         image: secure_url
       }))
-
+    }
       setReviewFormData(prevData => {
         createReview(prevData) // Now calling createService with the updated state
         return {
