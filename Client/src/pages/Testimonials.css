@@ -1,0 +1,17 @@
+.testimonials {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px;
+  background: linear-gradient(to right, #000, #51eb14);
+}
+
+.testimonials-title {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: rgb(241, 234, 234);
+  text-align: center;
+  padding: 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}

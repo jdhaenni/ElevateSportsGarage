@@ -25,6 +25,9 @@ export default function Sidebar ({ isOpen, toggleSidebar }) {
           <li onClick={toggleSidebar}>
             <Link to='/proshop'>Pro Shop</Link>
           </li>
+          <li onClick={toggleSidebar}>
+            <Link to='/testimonials'>Testimonials</Link>
+          </li>
         </ul>
       </div>
     </div>
