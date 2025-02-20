@@ -7,32 +7,52 @@ import {
   deleteReview
 } from '../../api/ReviewsApi'
 import { useState, useEffect } from 'react'
+import axios from 'axios'
 
 export default function AdminReviews () {
   const [reviewFormData, setReviewFormData] = useState({
     name: '',
     date: '',
     stars: '',
-    body: ''
+    body: '',
+    image: ''
   })
-
+  const [createReviewIMG, setCreateReviewIMG] = useState(null)
+  const [reviews, setReviews] = useState([])
   const handleReviewSubmit = async e => {
     e.preventDefault()
 
+    const formData = new FormData()
+    formData.append('file', createReviewIMG)
+    formData.append('upload_preset', 'ESGimg')
+    setCreateReviewIMG(null)
+
     try {
-      createReview(reviewFormData)
-      setReviewFormData({
-        name: '',
-        date: '',
-        stars: '',
-        body: ''
+      const response = await axios.post(
+        'https://api.cloudinary.com/v1_1/dlcaybqqy/image/upload',
+        formData
+      )
+      const { secure_url } = response.data
+      console.log(secure_url)
+      setReviewFormData(prevData => ({
+        ...prevData,
+        image: secure_url
+      }))
+
+      setReviewFormData(prevData => {
+        createReview(prevData) // Now calling createService with the updated state
+        return {
+          name: '',
+          date: '',
+          stars: '',
+          body: '',
+          image: ''
+        }
       })
     } catch (error) {
       console.log(error)
     }
   }
-
-  const [reviews, setReviews] = useState([])
 
   useEffect(() => {
     const fetchReviews = async () => {
@@ -52,11 +72,14 @@ export default function AdminReviews () {
       [e.target.name]: e.target.value
     }))
   }
-  
-const starsFunction = function (numberOfStars){
-    return(Array.from({ length: numberOfStars }).map((_, index) => (
-      <div className = 'stars' key={index}>&#11088;</div>
-    )))}
+
+  const starsFunction = function (numberOfStars) {
+    return Array.from({ length: numberOfStars }).map((_, index) => (
+      <div className='stars' key={index}>
+        &#11088;
+      </div>
+    ))
+  }
   return (
     <div>
       <div className='reviews'>
@@ -102,6 +125,15 @@ const starsFunction = function (numberOfStars){
               onChange={handleReviewChange}
             ></input>
             <br></br>
+            <label htmlFor='image'>Image</label>
+          <input
+            type='file'
+            name='image'
+            id='image'
+            onChange={event => {
+              setCreateReviewIMG(event.target.files[0])
+            }}
+          />
             <button type='submit'>Create New Review</button>
           </form>
           <br></br>

@@ -27,5 +27,12 @@ only image type input
 holiday hours
 thumbnails 
 side bar
-whitelist IPS
+
+
+
+axios routes for products and hours
+
+
+
+
 
