@@ -64,6 +64,7 @@
   display: flex;
   justify-content: center;
   max-width: 18rem;
+  max-height: fit-content;
 }
 
 .shop-link {
@@ -87,6 +88,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
   }
 
   img {
@@ -100,5 +102,15 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+}
+
+/* Desktop media query */
+@media screen and (min-width: 1025px) {
+  .content-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
   }
 }
