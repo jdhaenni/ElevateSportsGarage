@@ -15,3 +15,16 @@
   padding: 10px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
+
+.testimonials-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  margin: 40px;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
