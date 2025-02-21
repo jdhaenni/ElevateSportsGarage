@@ -40,17 +40,24 @@ export default function AdminReviews () {
         ...prevData,
         image: secure_url
       }))
+     
     }
       setReviewFormData(prevData => {
         createReview(prevData) // Now calling createService with the updated state
-        return {
+        })
+
+        setReviewFormData({
           name: '',
           date: '',
           stars: '',
           body: '',
           image: ''
-        }
-      })
+        })
+        
+         const data = await fetchAllReviews()
+      setReviews(data)
+       
+      
     } catch (error) {
       console.log(error)
     }
@@ -62,10 +69,12 @@ export default function AdminReviews () {
       setReviews(data)
     }
     fetchReviews()
-  }, [reviews])
+  }, [])
 
   const deleteReviewButton = async e => {
-    deleteReview(e.target.name)
+    await deleteReview(e.target.name)
+    const data = await fetchAllReviews()
+      setReviews(data)
   }
 
   const handleReviewChange = e => {

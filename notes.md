@@ -9,7 +9,7 @@ jd -admin variable errors
 
 
 
-review.stars iterable array to convert to &#11088;
+
 
 
 
@@ -33,6 +33,12 @@ side bar
 axios routes for products and hours
 
 
+facility page
+cages
+machines
+grab some images brands websites
 
+
+add image optional service/reviews/products
 
 
