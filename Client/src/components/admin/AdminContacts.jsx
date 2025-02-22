@@ -7,6 +7,8 @@ export default function AdminContacts() {
 
       const deleteContactButton = async e => {
         deleteContact(e.target.name)
+        const data = await getContacts()
+        setContacts(data)
       }
        
        
@@ -18,7 +20,7 @@ export default function AdminContacts() {
         setContacts(data)
       }
       getAllContacts()
-    }, [contacts])
+    }, [])
 
 
   return (

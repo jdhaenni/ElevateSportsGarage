@@ -9,7 +9,7 @@ export default function AdminHours () {
       setHours(data)
     }
     fetchHours()
-  }, [hours])
+  }, [])
 
   return (
     <div>

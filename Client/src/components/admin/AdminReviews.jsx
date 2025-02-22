@@ -19,6 +19,7 @@ export default function AdminReviews () {
   })
   const [createReviewIMG, setCreateReviewIMG] = useState(null)
   const [reviews, setReviews] = useState([])
+
   const handleReviewSubmit = async e => {
     e.preventDefault()
 
@@ -28,36 +29,34 @@ export default function AdminReviews () {
     setCreateReviewIMG(null)
 
     try {
-
-      if (createReviewIMG != null){
-      const response = await axios.post(
-        'https://api.cloudinary.com/v1_1/dlcaybqqy/image/upload',
-        formData
-      )
-      const { secure_url } = response.data
-      console.log(secure_url)
-      setReviewFormData(prevData => ({
-        ...prevData,
-        image: secure_url
-      }))
-     
-    }
-      setReviewFormData(prevData => {
-        createReview(prevData) // Now calling createService with the updated state
-        })
-
-        setReviewFormData({
-          name: '',
-          date: '',
-          stars: '',
-          body: '',
-          image: ''
-        })
-        
-         const data = await fetchAllReviews()
-      setReviews(data)
-       
+      if (createReviewIMG != null) {
+        const response = await axios.post(
+          'https://api.cloudinary.com/v1_1/dlcaybqqy/image/upload',
+          formData
+        )
+        const { secure_url } = response.data
+        console.log(secure_url)
+        setReviewFormData(prevData => ({
+          ...prevData,
+          image: secure_url
+        }))
+      }
       
+    await createReview(reviewFormData)
+
+      
+
+      setReviewFormData({
+        name: '',
+        date: '',
+        stars: '',
+        body: '',
+        image: ''
+      })
+     
+      const data = await fetchAllReviews()
+      console.log(data)
+      setReviews(data)
     } catch (error) {
       console.log(error)
     }
@@ -74,7 +73,7 @@ export default function AdminReviews () {
   const deleteReviewButton = async e => {
     await deleteReview(e.target.name)
     const data = await fetchAllReviews()
-      setReviews(data)
+    setReviews(data)
   }
 
   const handleReviewChange = e => {
@@ -137,21 +136,21 @@ export default function AdminReviews () {
             ></input>
             <br></br>
             <label htmlFor='image'>Image</label>
-          <input
-            type='file'
-            name='image'
-            id='image'
-            onChange={event => {
-              setCreateReviewIMG(event.target.files[0])
-            }}
-          />
+            <input
+              type='file'
+              name='image'
+              id='image'
+              onChange={event => {
+                setCreateReviewIMG(event.target.files[0])
+              }}
+            />
             <button type='submit'>Create New Review</button>
           </form>
           <br></br>
           {reviews.map(review => {
             return (
               <li key={review._id}>
-                <p>
+                
                   {review.name}
                   <br></br>
                   {starsFunction(review.stars)}
@@ -166,7 +165,7 @@ export default function AdminReviews () {
                     DELETE
                   </button>
                   <br></br>
-                </p>
+                
               </li>
             )
           })}
