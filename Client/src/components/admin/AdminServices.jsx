@@ -46,20 +46,25 @@ export default function AdminServices () {
           image: secure_url
         }))
       }
-      setServiceFormData(prevData => {
-        createService(prevData) // Now calling createService with the updated state
-        
-      })
-      setServiceFormData({
-        name: '',
-    description: '',
-    price: '',
-    image: ''
-      })
-      const data = await fetchAllServices()
-    setServices(data)
+      const newService = await createService(serviceFormData)
      
+           
      
+         if (newService) {
+           // Reset the form data after successful submission
+           setServiceFormData({
+            name: '',
+            description: '',
+            price: '',
+            image: ''
+           });
+          
+           const data = await fetchAllServices()
+           
+           setServices(data)}
+           else {
+             throw new Error('Failed to create the Service.');
+           }
     } catch (error) {
       console.log(error)
     }

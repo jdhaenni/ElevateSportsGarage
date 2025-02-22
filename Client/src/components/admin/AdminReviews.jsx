@@ -42,21 +42,26 @@ export default function AdminReviews () {
         }))
       }
       
-    await createReview(reviewFormData)
+    const newReview = await createReview(reviewFormData)
 
       
 
+    if (newReview) {
+      // Reset the form data after successful submission
       setReviewFormData({
         name: '',
         date: '',
         stars: '',
         body: '',
         image: ''
-      })
+      });
      
       const data = await fetchAllReviews()
-      console.log(data)
-      setReviews(data)
+      
+      setReviews(data)}
+      else {
+        throw new Error('Failed to create the review.');
+      }
     } catch (error) {
       console.log(error)
     }
