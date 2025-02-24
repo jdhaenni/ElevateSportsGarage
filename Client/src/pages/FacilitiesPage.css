@@ -34,6 +34,14 @@
   padding: 10px;
 }
 
+.image-description {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
+  width: 80%;
+}
+
 .message-section {
   flex: 1;
   text-align: center;
@@ -49,6 +57,34 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.brand-links {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.taterballs,
+.naked-grips,
+.lizard-skin {
+  text-decoration: none;
+  color: #6ae63a;
+  margin: 5px 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-family: "Arial", sans-serif;
+  background-color: darkgray;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.taterballs:hover,
+.naked-grips:hover,
+.lizard-skin:hover {
+  background-color: #51eb14;
+  color: black;
+  transform: translateY(-2px);
 }
 
 .product-title {
