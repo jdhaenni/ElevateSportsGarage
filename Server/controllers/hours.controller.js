@@ -19,7 +19,7 @@ export async function updateHours (req, res) {
     
 
    
-    const {monday,tuesday,wednesday,thursday,friday,saturday,sunday} = req.body
+    const {monday,tuesday,wednesday,thursday,friday,saturday,sunday,holiday} = req.body
 const id ="67ae84b5dc39a5d0e0835196"
    
     const hours = await Hours.findById(id)
@@ -38,6 +38,7 @@ const id ="67ae84b5dc39a5d0e0835196"
     hours.friday = friday
     hours.saturday = saturday
     hours.sunday = sunday
+    hours.holiday = holiday
 
      // save the hours
     await hours.save()
