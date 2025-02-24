@@ -9,12 +9,33 @@ import AdminContacts from '../components/admin/AdminContacts'
 
 
 export default function Admin () {
+
   return (
+    
     <div className='container'>
-      <AdminServices />
-      <AdminReviews />
-      <AdminContacts />
-      <AdminHours />
+      <div className='side-bar'><ul>
+          <li >
+            Services
+          </li>
+          <li >
+           Reviews
+          </li>
+          <li >
+            Contacts
+          </li>
+          <li>
+            Products
+          </li>
+          <li>
+            Hours
+          </li>
+        </ul></div>
+        <div className='display-container'>
+      <AdminServices className="services"/>
+      <AdminReviews className="reviews" />
+      <AdminContacts className="contacts" />
+      <AdminHours  />
+      </div>
       
       
     </div>

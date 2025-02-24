@@ -6,15 +6,38 @@
   justify-content: space-around;
 }
 .services {
-  width: 25%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 75%;
+  justify-self: center;
 }
 .reviews {
+  display: none;
   width: 25%;
 }
 .contacts {
+  display: none;
   width: 25%;
 }
-
+.hours {
+  display: none;
+  width: 25%;
+}
+.side-bar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 20%;
+  border: 5px;
+  border-color: black;
+  border-style: solid;
+  background-color: white;
+}
+li {
+  margin: 5%;
+}
 /* Cell phone media queries */
 @media screen and (max-width: 480px) {
   .container {
@@ -22,4 +45,13 @@
     flex-direction: column;
     justify-content: space-around;
   }
+}
+.display-container {
+  border: 5px;
+  border-color: black;
+  border-style: solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
 }

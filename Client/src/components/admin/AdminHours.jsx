@@ -12,7 +12,7 @@ export default function AdminHours () {
   }, [])
 
   return (
-    <div>
+    <div className ='hours'>
       <ul>
         {hours.map(hour => {
           return (
