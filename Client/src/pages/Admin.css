@@ -1,25 +1,117 @@
-.stars {
-  display: inline;
-}
-.container {
-  display: flex;
-  justify-content: space-around;
-}
-.services {
-  width: 25%;
-}
-.reviews {
-  width: 25%;
-}
-.contacts {
-  width: 25%;
+/* ServiceItem.css */
+
+/* The overall card container */
+.service-item {
+  background: linear-gradient(
+      145deg,
+      rgba(81, 235, 20, 0.1),
+      rgba(81, 235, 20, 0)
+    ),
+    #1a1a1a;
+  border: 3px solid #51eb14;
+  border-radius: 12px;
+  padding: 1.5rem;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(81, 235, 20, 0.3);
+  margin: 0 auto 2rem;
+  overflow: hidden; /* needed for accordion */
+  position: relative;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
-/* Cell phone media queries */
-@media screen and (max-width: 480px) {
-  .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+.service-item:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 15px rgba(81, 235, 20, 0.5);
+}
+
+/* Potential image */
+.service-image {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  transition: transform 0.3s;
+}
+
+.service-item:hover .service-image {
+  transform: scale(1.05);
+}
+
+/* The text content area */
+.service-name {
+  font-size: 1.4rem;
+  color: #51eb14;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.service-description {
+  font-size: 1rem;
+  color: #ddd;
+  margin-bottom: 1rem;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.service-price {
+  font-size: 1.1rem;
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Basic breakpoint for tablets */
+@media (max-width: 768px) {
+  .service-image {
+    height: 180px;
+  }
+}
+
+/* 
+  2. Mobile Accordion: 
+  Collapsed by default, expands if .expanded-mobile is applied 
+*/
+@media (max-width: 480px) {
+  /* Default: collapsed */
+  .service-item {
+    padding: 1rem;
+    max-height: 80px; /* only show the top portion */
+    transition: max-height 0.6s cubic-bezier(0.25, 0.8, 0.25, 1),
+      opacity 0.4s ease;
+    overflow: hidden;
+    opacity: 0.8;
+  }
+
+  /* The expanded state if user taps or scrolls (via your JS) */
+  .service-item.expanded-mobile {
+    max-height: 600px;
+    opacity: 1;
+    transition: max-height 0.6s cubic-bezier(0.25, 0.8, 0.25, 1),
+      opacity 0.4s ease;
+  }
+
+  /* We shift text fields down so they fade in only after expansion. 
+     If you want them always visible (just shorter container), skip. */
+  .service-description,
+  .service-price {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    transform: translateY(10px);
+    opacity: 0;
+  }
+
+  .service-item.expanded-mobile .service-description,
+  .service-item.expanded-mobile .service-price {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.2s;
+  }
+
+  /* The image can remain at a fixed size or also fade in if you want */
+  .service-image {
+    height: 160px;
   }
 }
