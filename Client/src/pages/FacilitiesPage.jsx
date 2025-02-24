@@ -1,54 +1,7 @@
 import React from 'react'
-import './Proshop.css'
+import './FacilitiesPage.css'
 
-const products = [
-  {
-    id: 1,
-    name: 'Baseball bats',
-    price: 80,
-    image: (
-      <img
-        src='https://www.elevatesportsgarage.com/_next/image?url=%2Fbaseball-bat.png&w=256&q=75'
-        alt='baseball bat'
-      />
-    )
-  },
-  {
-    id: 2,
-    name: 'Batting Gloves',
-    price: 50,
-    image: (
-      <img
-        src='https://www.elevatesportsgarage.com/_next/image?url=%2Fbatting-gloves.png&w=256&q=75'
-        alt='batting gloves'
-      />
-    )
-  },
-  {
-    id: 3,
-    name: 'ESG t-shirt',
-    price: 40,
-    image: (
-      <img
-        src='https://www.elevatesportsgarage.com/_next/image?url=%2Fesg-t-shirt.png&w=256&q=75'
-        alt='esg t-shirt'
-      />
-    )
-  },
-  {
-    id: 4,
-    name: 'Baseball/Softball 3-pack',
-    price: 25,
-    image: (
-      <img
-        src='https://www.elevatesportsgarage.com/_next/image?url=%2Fbaseball-softball-3-pack.png&w=256&q=75'
-        alt='baseball/softball 3-pack'
-      />
-    )
-  }
-]
-
-export default function Proshop () {
+export default function Facilities () {
   return (
     <div className='proshop-page'>
       <div className='content-container'>
@@ -57,9 +10,15 @@ export default function Proshop () {
             src='https://media.istockphoto.com/id/1314882259/photo/strong-baseball.jpg?s=612x612&w=0&k=20&c=Um_nVEvk1jfdP0OduFhVRVH8JCtYa0CVAA9h89m15ZY='
             alt='batting cage photo'
           />
+          <p className='image-description'>
+            At our facility, we use the Hack Attack Baseball Pitching Machines
+            that have a unique three-wheel design that lets you see the ball
+            clearly and fully all the way through the feeding motion,
+            acceleration and release, just like a live pitcher
+          </p>
         </div>
         <div className='message-section'>
-          <h1 className='welcome-message'>Welcome to the Pro Shop!</h1>
+          <h1 className='welcome-message'>Welcome to our Facilities!</h1>
           <p>
             Welcome to Elevate Sports Garage, your premier destination for
             indoor baseball and softball training.
@@ -78,15 +37,24 @@ export default function Proshop () {
           </p>
         </div>
         <div className='featured-product'>
-          <h2 className='product-title'>Featured Product</h2>
-          <p>Check out our signature ESG Batting Gloves!</p>
-          <img
-            className='batting-gloves'
-            src='https://vafloc02.s3.amazonaws.com/isyn/images/f614/img-4308614-m.jpg'
-            alt='batting gloves'
-          />
+          <h2 className='product-title'>Featured Products</h2>
+          <p>Check out some of the brands we carry!</p>
+          <div className='brand-links'>
+            <img src='' alt='Taterballs Image' />
+            <a href='https://www.taterbaseball.com' className='taterballs'>
+              Taterballs
+            </a>
+            <img src='' alt='Naked Grips image' />
+            <a href='https://www.nakedgrips.com' className='naked-grips'>
+              Naked Grips
+            </a>
+            <img src='' alt='Lizard Skin image' />
+            <a href='https://www.lizardskins.com' className='lizard-skin'>
+              Lizard Skin
+            </a>
+          </div>
           <a href='link-to-shop' className='shop-link'>
-            Shop Now!
+            SHOP NOW!
           </a>
         </div>
       </div>

@@ -6,7 +6,7 @@ import Admin from './pages/Admin'
 import ServicesPage from './pages/ServicesPage'
 import Footer from './components/footer/Footer'
 import NavBar from './components/navigationBar/Navbar'
-import Proshop from './pages/Proshop'
+import Facilities from './pages/FacilitiesPage'
 import Testimonials from './pages/Testimonials'
 
 import ProtectedRoute from './pages/ProtectedRoute'
@@ -22,7 +22,7 @@ export default function App () {
         <Route path='/login' element={<Login />} />
         <Route path='/services' element={<ServicesPage />} />
         <Route path='/contact' element={<ContactPage />} />
-        <Route path='/proshop' element={<Proshop />} />
+        <Route path='/facilities' element={<Facilities />} />
         <Route path='/testimonials' element={<Testimonials />} />
         <Route
           path='/protected'
