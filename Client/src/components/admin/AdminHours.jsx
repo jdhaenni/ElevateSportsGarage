@@ -9,10 +9,10 @@ export default function AdminHours () {
       setHours(data)
     }
     fetchHours()
-  }, [hours])
+  }, [])
 
   return (
-    <div>
+    <div className ='hours'>
       <ul>
         {hours.map(hour => {
           return (

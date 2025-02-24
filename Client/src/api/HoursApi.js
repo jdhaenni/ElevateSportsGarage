@@ -12,7 +12,7 @@ export const getHours = async () => {
   };
 
 // update an hours
-export const updateReview = async (id,hours) => {
+export const updateHours = async (id,hours) => {
     const response = await AuthService.put(`/hours/${id}`, hours);
     return response.data;
   };

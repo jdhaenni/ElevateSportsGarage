@@ -17,7 +17,7 @@ export default function AdminServices () {
       setServices(data)
     }
     fetchServices()
-  }, [services])
+  }, [])
   const [serviceFormData, setServiceFormData] = useState({
     name: '',
     description: '',
@@ -34,32 +34,46 @@ export default function AdminServices () {
     setCreateServiceIMG(null)
 
     try {
-      const response = await axios.post(
-        'https://api.cloudinary.com/v1_1/dlcaybqqy/image/upload',
-        formData
-      )
-      const { secure_url } = response.data
-      console.log(secure_url)
-      setServiceFormData(prevData => ({
-        ...prevData,
-        image: secure_url
-      }));
-      
-      setServiceFormData(prevData => {
-        createService(prevData)  // Now calling createService with the updated state
-        return {
-          name: '',
-          description: '',
-          price: '',
-          image: ''
-        }
-      })
+      if (createServiceIMG != null) {
+        const response = await axios.post(
+          'https://api.cloudinary.com/v1_1/dlcaybqqy/image/upload',
+          formData
+        )
+        const { secure_url } = response.data
+        console.log(secure_url)
+        setServiceFormData(prevData => ({
+          ...prevData,
+          image: secure_url
+        }))
+      }
+      const newService = await createService(serviceFormData)
+     
+           
+     
+         if (newService) {
+           // Reset the form data after successful submission
+           setServiceFormData({
+            name: '',
+            description: '',
+            price: '',
+            image: ''
+           });
+          
+           const data = await fetchAllServices()
+           
+           setServices(data)}
+           else {
+             throw new Error('Failed to create the Service.');
+           }
     } catch (error) {
       console.log(error)
     }
+    
   }
   const deleteServiceButton = async e => {
-    deleteService(e.target.name)
+    await deleteService(e.target.name)
+    const data = await fetchAllServices()
+    setServices(data)
   }
   const handleServiceChange = e => {
     setServiceFormData(prev => ({
