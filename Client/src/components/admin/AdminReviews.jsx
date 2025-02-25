@@ -1,112 +1,118 @@
-import React from "react";
+import React from 'react'
 import {
   fetchAllReviews,
   fetchReview,
   createReview,
   updateReview,
-  deleteReview,
-} from "../../api/ReviewsApi";
-import { useState, useEffect } from "react";
-import axios from "axios";
+  deleteReview
+} from '../../api/ReviewsApi'
+import { useState, useEffect } from 'react'
+import axios from 'axios'
 
-export default function AdminReviews() {
+export default function AdminReviews () {
   const [reviewFormData, setReviewFormData] = useState({
-    name: "",
-    date: "",
-    stars: "",
-    body: "",
-    image: "",
-  });
-  const [createReviewIMG, setCreateReviewIMG] = useState(null);
-  const [reviews, setReviews] = useState([]);
+    name: '',
+    date: '',
+    stars: '',
+    body: '',
+    image: ''
+  })
+  const [createReviewIMG, setCreateReviewIMG] = useState(null)
+  const [reviews, setReviews] = useState([])
 
-  const handleReviewSubmit = async (e) => {
-    e.preventDefault();
+  useEffect(() => {
+    const fetchReviews = async () => {
+      const data = await fetchAllReviews()
+      setReviews(data)
+    }
+    fetchReviews()
+  }, [])
 
-    const formData = new FormData();
-    formData.append("file", createReviewIMG);
-    formData.append("upload_preset", "ESGimg");
-    setCreateReviewIMG(null);
+  const handleReviewSubmit = async e => {
+    e.preventDefault()
 
     try {
+      let imageUrl = reviewFormData.image
+
+      // Only upload image if one was selected
       if (createReviewIMG != null) {
+        const formData = new FormData()
+        formData.append('file', createReviewIMG)
+        formData.append('upload_preset', 'ESGimg')
+
         const response = await axios.post(
-          "https://api.cloudinary.com/v1_1/dlcaybqqy/image/upload",
+          'https://api.cloudinary.com/v1_1/dlcaybqqy/image/upload',
           formData
-        );
-        const { secure_url } = response.data;
-        console.log(secure_url);
-        setReviewFormData((prevData) => ({
-          ...prevData,
-          image: secure_url,
-        }));
+        )
+        imageUrl = response.data.secure_url
+        console.log('Image uploaded:', imageUrl)
       }
 
-      const newReview = await createReview(reviewFormData);
+      // Create a new object with all form data and the image URL
+      const reviewDataToSubmit = {
+        ...reviewFormData,
+        image: imageUrl
+      }
+
+      // Create the service with the complete data
+      const newReview = await createReview(reviewDataToSubmit)
 
       if (newReview) {
         // Reset the form data after successful submission
         setReviewFormData({
-          name: "",
-          date: "",
-          stars: "",
-          body: "",
-          image: "",
-        });
+          name: '',
+          date: '',
+          stars: '',
+          body: '',
+          image: ''
+        })
+        setCreateReviewIMG(null)
 
-        const data = await fetchAllReviews();
-
-        setReviews(data);
+        // Fetch updated services list
+        const data = await fetchAllReviews()
+        setReviews(data)
       } else {
-        throw new Error("Failed to create the review.");
+        throw new Error('Failed to create the Service.')
       }
     } catch (error) {
-      console.log(error);
+      console.log(error)
     }
-  };
+  }
 
-  useEffect(() => {
-    const fetchReviews = async () => {
-      const data = await fetchAllReviews();
-      setReviews(data);
-    };
-    fetchReviews();
-  }, []);
+  const deleteReviewButton = async e => {
+    await deleteReview(e.target.name)
+    const data = await fetchAllReviews()
+    setReviews(data)
+  }
 
-  const deleteReviewButton = async (e) => {
-    await deleteReview(e.target.name);
-    const data = await fetchAllReviews();
-    setReviews(data);
-  };
-
-  const handleReviewChange = (e) => {
-    setReviewFormData((prev) => ({
+  const handleReviewChange = e => {
+    setReviewFormData(prev => ({
       ...prev,
-      [e.target.name]: e.target.value,
-    }));
-  };
+      [e.target.name]: e.target.value
+    }))
+  }
 
   const starsFunction = function (numberOfStars) {
     return Array.from({ length: numberOfStars }).map((_, index) => (
-      <div className="stars" key={index}>
+      <div className='stars' key={index}>
         &#11088;
       </div>
-    ));
-  };
+    ))
+  }
   return (
     <div>
-      <div className="reviews">
+      <div className='reviews'>
         <ul>
           <h1>REVIEWS</h1>
           <br></br>
           NEW REVIEW<br></br>
-          <form></form>{" "}
+          <form></form>{' '}
           <form onSubmit={handleReviewSubmit}>
             <label>Name</label>
             <br></br>
             <input
-              type="text"
-              name="name"
+              type='text'
+              name='name'
               value={reviewFormData.name}
               onChange={handleReviewChange}
             ></input>
@@ -114,8 +120,8 @@ export default function AdminReviews() {
             <label>Date</label>
             <br></br>
             <input
-              type="text"
-              name="date"
+              type='text'
+              name='date'
               value={reviewFormData.date}
               onChange={handleReviewChange}
             ></input>
@@ -123,8 +129,8 @@ export default function AdminReviews() {
             <label>Stars (1-5)</label>
             <br></br>
             <input
-              type="text"
-              name="stars"
+              type='text'
+              name='stars'
               value={reviewFormData.stars}
               onChange={handleReviewChange}
             ></input>
@@ -132,25 +138,25 @@ export default function AdminReviews() {
             <label>Body</label>
             <br></br>
             <input
-              type="text"
-              name="body"
+              type='text'
+              name='body'
               value={reviewFormData.body}
               onChange={handleReviewChange}
             ></input>
             <br></br>
-            <label htmlFor="image">Image</label>
+            <label htmlFor='image'>Image</label>
             <input
-              type="file"
-              name="image"
-              id="image"
-              onChange={(event) => {
-                setCreateReviewIMG(event.target.files[0]);
+              type='file'
+              name='image'
+              id='image'
+              onChange={event => {
+                setCreateReviewIMG(event.target.files[0])
               }}
             />
-            <button type="submit">Create New Review</button>
+            <button type='submit'>Create New Review</button>
           </form>
           <br></br>
-          {reviews.map((review) => {
+          {reviews.map(review => {
             return (
               <li key={review._id}>
                 {review.name}
@@ -168,10 +174,10 @@ export default function AdminReviews() {
                 </button>
                 <br></br>
               </li>
-            );
+            )
           })}
         </ul>
       </div>
     </div>
-  );
+  )
 }
