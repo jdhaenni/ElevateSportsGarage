@@ -101,10 +101,18 @@ export default function AdminReviews () {
   }
 
   const starsFunction = function (numberOfStars) {
-    return Array.from({ length: numberOfStars }).map((_, index) => (
-      <div className='stars' key={index}>
-        &#11088;
-      </div>
+    return Array.from({ length: 5 }).map((_, index) => (
+      <span
+        key={index}
+        style={{
+          cursor: 'pointer',
+          color: index < numberOfStars ? 'gold' : 'gray',
+          fontSize: '20px'
+        }}
+        onClick={() => setReviewFormData({ ...reviewFormData, stars: index + 1 })}
+      >
+        &#9733;
+      </span>
     ))
   }
   return (
@@ -137,15 +145,9 @@ export default function AdminReviews () {
             ></input>
             <br></br>
             <label>Stars (1-5)</label>
-            <br></br>
-            <input
-              type='number'
-              name='stars'
-              value={reviewFormData.stars}
-              onChange={handleReviewChange}
-              required
-            ></input>
-            <br></br>
+          <br />
+          <div>{starsFunction(reviewFormData.stars)}</div>
+          <br />
             <label>Body</label>
             <br></br>
             <input
