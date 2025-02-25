@@ -8,7 +8,7 @@ import {
 } from '../../api/ReviewsApi'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
-
+import './AdminReviews.css'
 export default function AdminReviews () {
   const [reviewFormData, setReviewFormData] = useState({
     name: '',
@@ -178,6 +178,8 @@ export default function AdminReviews () {
                 {review.date}
                 <br></br>
                 {review.body}
+                <br></br>
+                <img src={review.image}></img>
                 <br></br>
                 <button>UPDATE</button>
                 <br></br>

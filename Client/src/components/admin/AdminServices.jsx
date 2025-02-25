@@ -8,6 +8,7 @@ import {
   deleteService,
 } from "../../api/ServicesApi";
 import axios from "axios";
+import './AdminServices.css'
 
 export default function AdminServices() {
   const [services, setServices] = useState([]);
@@ -149,6 +150,8 @@ export default function AdminServices() {
                   {service.description}
                   <br></br>
                   {service.price}
+                  <br></br>
+                  <img src={service.image}></img>
                   <br></br>
                   <button>UPDATE</button>
                   <br></br>

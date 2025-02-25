@@ -1,53 +1,15 @@
-
-
-3. require fields on admin
 4.API TOKEN FOR PROTECTED ROUTES
-
-
-jd - admin -update buttons
-jd -admin variable errors
-
-
-
-
-
-
-
+jd - admin -update button
 template literal on nodemailer!
-
-
-
-
-professional reviews
-testimonials page
-
-
-holiday hours
+phone number optional, perfered method of contact check email or phone?
 thumbnails 
-
-
-
-
 axios routes for products and hours
-
-
 facility page
 cages
 machines
-
-
-
-
-
-click on logo takes home
-
-
 service image slow?
-
-
 text on contact us
-
-
 hot load admin
-
-thumbnails
+succeful contact send confomation with nice message
+input validation all over
+contact text ask us about birthday yadada  etc
