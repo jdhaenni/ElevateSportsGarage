@@ -12,8 +12,8 @@ export const getHours = async () => {
   };
 
 // update an hours
-export const updateHours = async (id,hours) => {
-    const response = await AuthService.put(`/hours/${id}`, hours);
+export const updateHours = async (hours) => {
+    const response = await AuthService.put('/hours', hours);
     return response.data;
   };
   

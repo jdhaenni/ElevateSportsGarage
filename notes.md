@@ -13,3 +13,9 @@ hot load admin
 succeful contact send confomation with nice message
 input validation all over
 contact text ask us about birthday yadada  etc
+
+login text
+
+
+hot reload broke agin
+hours[0]?????  fuckkk

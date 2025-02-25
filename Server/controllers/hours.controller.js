@@ -21,12 +21,15 @@ export async function updateHours (req, res) {
    
     const {monday,tuesday,wednesday,thursday,friday,saturday,sunday,holiday} = req.body
 const id ="67ae84b5dc39a5d0e0835196"
-   
+   console.log('ping')
+   console.log(req.body)
     const hours = await Hours.findById(id)
     if (!hours) {
+      console.log('well shit')
       return res.status(404).json({
         success: false,
-        message: 'hours not found'
+        message: 'hours not found',
+        
       })
     }
 
