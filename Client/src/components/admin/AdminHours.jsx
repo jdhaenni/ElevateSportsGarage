@@ -31,6 +31,7 @@ export default function AdminHours () {
               <br></br>
               Sunday: {hour.sunday}
               <br></br>
+              Holiday or exeptions - optional: {hour.holiday}
             </li>
           )
         })}

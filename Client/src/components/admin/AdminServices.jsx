@@ -13,8 +13,13 @@ export default function AdminServices () {
   const [services, setServices] = useState([])
   useEffect(() => {
     const fetchServices = async () => {
-      const data = await fetchAllServices()
-      setServices(data)
+      try {
+        const data = await fetchAllServices()
+        setServices(data)
+      } catch (err) {
+        console.error(err)
+        // Optionally set some error state here
+      }
     }
     fetchServices()
   }, [])
