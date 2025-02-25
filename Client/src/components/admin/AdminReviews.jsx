@@ -31,6 +31,14 @@ export default function AdminReviews () {
   const handleReviewSubmit = async e => {
     e.preventDefault()
 
+    //input validation
+
+  
+    if (reviewFormData.stars < 1 || reviewFormData.stars > 5) {
+      alert('Stars must be between 1 and 5')
+      return
+    }
+
     try {
       let imageUrl = reviewFormData.image
 
@@ -115,6 +123,7 @@ export default function AdminReviews () {
               name='name'
               value={reviewFormData.name}
               onChange={handleReviewChange}
+              required
             ></input>
             <br></br>
             <label>Date</label>
@@ -124,15 +133,17 @@ export default function AdminReviews () {
               name='date'
               value={reviewFormData.date}
               onChange={handleReviewChange}
+              required
             ></input>
             <br></br>
             <label>Stars (1-5)</label>
             <br></br>
             <input
-              type='text'
+              type='number'
               name='stars'
               value={reviewFormData.stars}
               onChange={handleReviewChange}
+              required
             ></input>
             <br></br>
             <label>Body</label>
@@ -142,6 +153,7 @@ export default function AdminReviews () {
               name='body'
               value={reviewFormData.body}
               onChange={handleReviewChange}
+              required
             ></input>
             <br></br>
             <label htmlFor='image'>Image</label>
