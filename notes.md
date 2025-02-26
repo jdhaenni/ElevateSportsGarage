@@ -1,44 +1,21 @@
-
-services/reviews not defined on page load error
-3. require fields on admin
 4.API TOKEN FOR PROTECTED ROUTES
-
-
-jd - admin -update buttons
-jd -admin variable errors
-
-
-
-
-
-
-
+jd - admin -update button
 template literal on nodemailer!
-
-memberships
-proshop
-proshop
-products instead of reviews
-
-professional reviews
-testimonials page
-
-only image type input
-holiday hours
+phone number optional, perfered method of contact check email or phone?
 thumbnails 
-side bar
-
-
-
 axios routes for products and hours
-
-
 facility page
 cages
 machines
-grab some images brands websites
+service image slow?
+text on contact us
+hot load admin
+succeful contact send confomation with nice message
+input validation all over
+contact text ask us about birthday yadada  etc
+
+login text
 
 
-add image optional service/reviews/products
-
-
+hot reload broke agin
+hours[0]?????  fuckkk

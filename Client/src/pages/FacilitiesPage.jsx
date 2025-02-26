@@ -41,30 +41,36 @@ export default function Facilities () {
           <h2 className='product-title'>Proshop Products</h2>
           <p>Check out some of the brands we carry!</p>
           <div className='brand-links'>
-            <img
-              className='taterballs-image'
-              src='https://res.cloudinary.com/dlcaybqqy/image/upload/v1740444062/High_Density_Foam_Baseball_nacyg7.jpg'
-              alt='Taterballs Image'
-            />
-            <a href='https://www.taterbaseball.com' className='taterballs'>
-              Taterballs
-            </a>
-            <img
-              className='naked-grip-image'
-              src='https://res.cloudinary.com/dlcaybqqy/image/upload/v1740443993/1_Bomb_mzjigx.webp'
-              alt='Naked Grips image'
-            />
-            <a href='https://www.nakedgrips.com' className='naked-grips'>
-              Naked Grips
-            </a>
-            <img
-              className='batting-tape'
-              src='https://res.cloudinary.com/dlcaybqqy/image/upload/v1740439312/media_3d73382b-b133-4059-b92c-47ec58205faa_990x990_dajwuf.webp'
-              alt='Lizard Skin image'
-            />
-            <a href='https://www.lizardskins.com' className='lizard-skin'>
-              Lizard Skin
-            </a>
+            <div className='taterballs-container'>
+              <img
+                className='taterballs-image'
+                src='https://res.cloudinary.com/dlcaybqqy/image/upload/v1740444062/High_Density_Foam_Baseball_nacyg7.jpg'
+                alt='Taterballs Image'
+              />
+              <a href='https://www.taterbaseball.com' className='taterballs'>
+                Taterballs
+              </a>
+            </div>
+            <div className='naked-grips-container'>
+              <img
+                className='naked-grip-image'
+                src='https://res.cloudinary.com/dlcaybqqy/image/upload/v1740443993/1_Bomb_mzjigx.webp'
+                alt='Naked Grips image'
+              />
+              <a href='https://www.nakedgrips.com' className='naked-grips'>
+                Naked Grips
+              </a>
+            </div>
+            <div className='lizard-skin-container'>
+              <img
+                className='batting-tape'
+                src='https://res.cloudinary.com/dlcaybqqy/image/upload/v1740439312/media_3d73382b-b133-4059-b92c-47ec58205faa_990x990_dajwuf.webp'
+                alt='Lizard Skin image'
+              />
+              <a href='https://www.lizardskins.com' className='lizard-skin'>
+                Lizard Skin
+              </a>
+            </div>
           </div>
           <a href='link-to-shop' className='shop-link'>
             SHOP NOW!

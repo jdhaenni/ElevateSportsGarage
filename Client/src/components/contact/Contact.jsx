@@ -45,6 +45,7 @@ export default function Contact () {
           name='name'
           value={contactFormData.name}
           onChange={handleContactChange}
+          required
         ></input>
         <br></br>
         <label className='email'>Email</label>
@@ -54,6 +55,7 @@ export default function Contact () {
           name='email'
           value={contactFormData.email}
           onChange={handleContactChange}
+          required
         ></input>
         <br></br>
         <label className='message'>Message</label>
@@ -64,6 +66,7 @@ export default function Contact () {
           name='body'
           value={contactFormData.body}
           onChange={handleContactChange}
+          required
         ></input>
         <br></br>
         <button type='submit'>Send!</button>

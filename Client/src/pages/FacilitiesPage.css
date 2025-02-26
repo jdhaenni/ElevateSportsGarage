@@ -44,8 +44,8 @@
 }
 
 .pitch-machine {
-  max-height: 50vh;
-  max-width: 50vw;
+  max-height: 100vh;
+  max-width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -67,7 +67,7 @@
 .batting-tape {
   max-width: 30vw;
   max-height: 30vh;
-  background-color: rgb(156, 153, 153);
+  background-color: rgb(180, 178, 178);
   border-radius: 5px;
   padding: 10px;
 }
@@ -75,11 +75,13 @@
 .naked-grip-image {
   max-height: 30vh;
   max-width: 30vw;
+  border-radius: 5px;
 }
 
 .taterballs-image {
   max-height: 30vh;
   max-width: 30vw;
+  border-radius: 5px;
 }
 
 .message-section {
@@ -109,17 +111,39 @@
   padding: 20px;
 }
 
+.taterballs-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+}
+
+.naked-grips-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+}
+
+.lizard-skin-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+}
+
 .taterballs,
 .naked-grips,
 .lizard-skin {
   display: block;
   text-decoration: none;
-  color: black;
+  color: rgb(7, 224, 7);
   margin: 5px 0;
+  margin-top: 10px;
   font-size: 1.5rem;
   font-weight: bold;
   font-family: "Arial", sans-serif;
-  background-color: rgb(55, 236, 9);
+  /* background-color: rgb(55, 236, 9); */
   border-radius: 5px;
   padding: 10px;
 }
@@ -127,8 +151,8 @@
 .taterballs:hover,
 .naked-grips:hover,
 .lizard-skin:hover {
-  background-color: #808180;
-  color: black;
+  background-color: #f4f7f4;
+  color: #51eb14;
   transform: translateY(-2px);
 }
 
