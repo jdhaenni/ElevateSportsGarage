@@ -6,7 +6,8 @@ import { Link } from 'react-router-dom'
 export default function NavBar () {
   const [isOpen, setIsOpen] = useState(false)
 
-  const toggleSidebar = () => {setIsOpen(!isOpen)
+  const toggleSidebar = () => {
+    setIsOpen(!isOpen)
     console.log(isOpen)
   }
   return (
