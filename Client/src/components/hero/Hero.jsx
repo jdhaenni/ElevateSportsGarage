@@ -84,7 +84,6 @@ const Hero = () => {
 
         <QuickContactButton label="Contact Us" />
       </div>
-
       <div className="hero-testimonials">
         <p>Curious what local coaches are saying?</p>
         <Link to="/testimonials" className="testimonials-link-button">
@@ -94,5 +93,31 @@ const Hero = () => {
     </section>
   );
 };
+export default function JazzHero() {
+  useEffect(() => {
+    if (window.innerWidth > 480) return;
 
-export default Hero;
+    const cards = document.querySelectorAll(".membership-card");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("expanded-mobile");
+          } else {
+            entry.target.classList.remove("expanded-mobile");
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    cards.forEach((card) => observer.observe(card));
+
+    return () => {
+      cards.forEach((card) => observer.unobserve(card));
+    };
+  }, []);
+
+  return <Hero />;
+}
