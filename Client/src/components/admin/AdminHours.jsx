@@ -10,6 +10,7 @@ export default function AdminHours () {
     const fetchHours = async () => {
       const data = await getHours()
       setHours(data)
+      console.log(data)
     }
     fetchHours()
   }, [])
@@ -25,17 +26,18 @@ export default function AdminHours () {
     })
   }
 
-  const handleSaveClick = () => {
+  const handleSaveClick = async () => {
     
-   
+   const newHours = hours.map(hour => ({
+    ...hour,
+    ...updatedHours
+  }))
+  console.log(newHours[0])
+  const newUpdatedHours = await updateHours(newHours[0])
     setEditMode(false)
     // Update the state to reflect the saved hours
-    setHours(hours.map(hour => ({
-      ...hour,
-      ...updatedHours
-    })))
-    console.log(hours[0])
-    updateHours(hours[0])
+    
+    setHours([newUpdatedHours])
   }
 
   return (
