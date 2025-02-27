@@ -3,6 +3,7 @@ import { loginAdmin } from "../api/LoginApi";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import AuthService from "../api/AuthService";
+import "./login.css";
 
 export default function Login() {
   const navigate = useNavigate();
@@ -40,7 +41,7 @@ export default function Login() {
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <label style={{ color: "black" }}>User Name</label>
+        <label style={{ color: "white" }}>User Name</label>
         <br></br>
         <input
           type="text"
@@ -49,7 +50,7 @@ export default function Login() {
           onChange={handleChange}
         ></input>
         <br></br>
-        <label style={{ color: "black" }}>Password</label>
+        <label style={{ color: "white" }}>Password</label>
         <br></br>
         <input
           type="password"
