@@ -25,6 +25,7 @@ export default function AdminServices () {
     image: ''
   })
   const [createServiceIMG, setCreateServiceIMG] = useState(null)
+  const [putServiceIMG, setPutServiceIMG] = useState(null)
   const [editingService, setEditingService] = useState(null)
   useEffect(() => {
     const fetchServices = async () => {
@@ -114,7 +115,38 @@ export default function AdminServices () {
   }
   const handleSaveClick = async serviceId => {
     try {
-      const updatedService = await updateService(serviceId, putFormData)
+
+      let imageUrl = putFormData.image
+
+      // Only upload image if one was selected
+      if (putServiceIMG != null) {
+        const formData = new FormData()
+        formData.append('file', putServiceIMG)
+        formData.append('upload_preset', 'ESGimg')
+
+        const response = await axios.post(
+          'https://api.cloudinary.com/v1_1/dlcaybqqy/image/upload',
+          formData
+        )
+        imageUrl = response.data.secure_url
+        console.log('Image uploaded:', imageUrl)
+      }
+
+      // Create a new object with all form data and the image URL
+      const putDataToSubmit = {
+        ...putFormData,
+        image: imageUrl
+      }
+
+
+
+
+
+
+
+
+
+      const updatedService = await updateService(serviceId, putDataToSubmit)
 
       if (updatedService) {
         // Fetch updated services list
@@ -221,11 +253,13 @@ export default function AdminServices () {
                       <label>Image</label>
                       <br />
                       <input
-                        type='text'
-                        name='image'
-                        value={putFormData.image}
-                        onChange={handlePutChange}
-                      />
+            type='file'
+            name='image'
+            id='image'
+            onChange={event => {
+              setPutServiceIMG(event.target.files[0])
+            }}
+          />
                       <br />
                       <button onClick={() => {
   setEditingService(null);  // Stop editing

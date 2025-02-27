@@ -25,6 +25,7 @@ export default function AdminReviews () {
     image: ''
   })
   const [createReviewIMG, setCreateReviewIMG] = useState(null)
+  const [updateReviewIMG, setUpdateReviewIMG] = useState(null)
   const [reviews, setReviews] = useState([])
   const [editingReview, setEditingReview] = useState(null)
 
@@ -124,7 +125,35 @@ export default function AdminReviews () {
   }
   const handleSaveClick = async reviewId => {
     try {
-      const updatedReview = await updateReview(reviewId, putFormData)
+
+
+      let imageUrl = putFormData.image
+
+      // Only upload image if one was selected
+      if (updateReviewIMG != null) {
+        const formData = new FormData()
+        formData.append('file', updateReviewIMG)
+        formData.append('upload_preset', 'ESGimg')
+
+        const response = await axios.post(
+          'https://api.cloudinary.com/v1_1/dlcaybqqy/image/upload',
+          formData
+        )
+        imageUrl = response.data.secure_url
+        console.log('Image uploaded:', imageUrl)
+      }
+
+      // Create a new object with all form data and the image URL
+      const updatedDataToSubmit = {
+        ...putFormData,
+        image: imageUrl
+      }
+
+
+
+
+
+      const updatedReview = await updateReview(reviewId, updatedDataToSubmit)
 
       if (updatedReview) {
         // Fetch updated services list
@@ -275,11 +304,13 @@ export default function AdminReviews () {
                       <label>Image</label>
                       <br />
                       <input
-                        type='text'
-                        name='image'
-                        value={putFormData.image}
-                        onChange={handlePutChange}
-                      />
+              type='file'
+              name='image'
+              id='image'
+              onChange={event => {
+                setUpdateReviewIMG(event.target.files[0])
+              }}
+            />
                       <br />
                       <button
                         onClick={() => {
