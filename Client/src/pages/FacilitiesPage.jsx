@@ -1,7 +1,7 @@
 import React from 'react'
 import './FacilitiesPage.css'
 
-export default function Facilities () {
+export default function Facilities() {
   return (
     <div className='facilities-page'>
       <div className='content-container'>
