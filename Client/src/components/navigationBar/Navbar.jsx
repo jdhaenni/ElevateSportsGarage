@@ -15,10 +15,10 @@ export default function NavBar () {
       <div className='sidebar-container'>
         <Sidebar isOpen={isOpen} toggleSidebar={toggleSidebar} />
       </div>
-      <div><Link to='/'>
+      <div className='logo-container'><Link to='/'>
         <img
           className='logo'
-          src='https://www.elevatesportsgarage.com/_next/image?url=%2Flogo.png&w=256&q=75'
+          src='https://res.cloudinary.com/dlcaybqqy/image/upload/v1740608408/logo_qqatsu.png'
           alt='esg logo'
         /></Link>
       </div>
