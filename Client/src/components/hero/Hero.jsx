@@ -3,6 +3,7 @@ import "./Hero.css";
 
 import QuickContactButton from "../contact/QuickContactButton";
 import "../contact/QuickContactButton.css";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
@@ -82,6 +83,12 @@ const Hero = () => {
         </a>
 
         <QuickContactButton label="Contact Us" />
+      </div>
+      <div className="hero-testimonials">
+        <p>Curious what local coaches are saying?</p>
+        <Link to="/testimonials" className="testimonials-link-button">
+          See Testimonials
+        </Link>
       </div>
     </section>
   );
