@@ -1,20 +1,21 @@
-import { React, useState, useEffect } from 'react'
-import { getHours } from '../../api/HoursApi'
-export default function AdminHours () {
-  const [hours, setHours] = useState([])
+import { React, useState, useEffect } from "react";
+import { getHours } from "../../api/HoursApi";
+
+export default function AdminHours() {
+  const [hours, setHours] = useState([]);
 
   useEffect(() => {
     const fetchHours = async () => {
-      const data = await getHours()
-      setHours(data)
-    }
-    fetchHours()
-  }, [])
+      const data = await getHours();
+      setHours(data);
+    };
+    fetchHours();
+  }, []);
 
   return (
-    <div className ='hours'>
+    <div className="hours">
       <ul>
-        {hours.map(hour => {
+        {hours.map((hour) => {
           return (
             <li key={hour._id}>
               Monday: {hour.monday}
@@ -32,9 +33,9 @@ export default function AdminHours () {
               Sunday: {hour.sunday}
               <br></br>
             </li>
-          )
+          );
         })}
       </ul>
     </div>
-  )
+  );
 }

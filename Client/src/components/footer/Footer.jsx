@@ -6,6 +6,7 @@ import {
   faInstagram,
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
+import AdminHours from "../admin/AdminHours";
 
 export default function Footer() {
   // The Footer component is a functional component that renders the footer section of the website.
@@ -27,6 +28,9 @@ export default function Footer() {
         {/* The address information is displayed in a paragraph element. */}
         <p> email: email here | phone: (123) 456-7890</p>{" "}
         {/* The contact information is displayed in a paragraph element. */}
+      </div>
+      <div className="footer-hours">
+        <AdminHours />
       </div>
       <div className="footer-social">
         <a

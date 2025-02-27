@@ -3,6 +3,7 @@ import "./Hero.css";
 
 import QuickContactButton from "../contact/QuickContactButton";
 import "../contact/QuickContactButton.css";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
@@ -83,34 +84,15 @@ const Hero = () => {
 
         <QuickContactButton label="Contact Us" />
       </div>
+
+      <div className="hero-testimonials">
+        <p>Curious what local coaches are saying?</p>
+        <Link to="/testimonials" className="testimonials-link-button">
+          See Testimonials
+        </Link>
+      </div>
     </section>
   );
 };
-export default function JazzHero() {
-  useEffect(() => {
-    if (window.innerWidth > 480) return;
 
-    const cards = document.querySelectorAll(".membership-card");
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("expanded-mobile");
-          } else {
-            entry.target.classList.remove("expanded-mobile");
-          }
-        });
-      },
-      { threshold: 0.5 }
-    );
-
-    cards.forEach((card) => observer.observe(card));
-
-    return () => {
-      cards.forEach((card) => observer.unobserve(card));
-    };
-  }, []);
-
-  return <Hero />;
-}
+export default Hero;
