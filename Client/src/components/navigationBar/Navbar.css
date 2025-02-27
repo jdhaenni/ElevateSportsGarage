@@ -13,11 +13,15 @@
   padding: 20px;
 }
 
-.logo {
-  align-self: center;
+.logo-container {
   display: flex;
-  max-height: 40vh;
-  padding-right: 3vw;
+  align-items: center;
+}
+.logo {
+  max-height: 260px;
+  padding: 20px;
+  width: auto;
+  display: block;
 }
 
 .nav-content {

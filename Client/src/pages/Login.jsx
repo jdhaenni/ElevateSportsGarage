@@ -45,9 +45,9 @@ const handleChange = (e) => {
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <label>User Name</label><br></br>
+        <label style={{color:'black'}}>User Name</label><br></br>
         <input type='text' name = 'user' value = {formData.user} onChange={handleChange}></input><br></br>
-        <label>Password</label><br></br>
+        <label style={{color:'black'}}>Password</label><br></br>
         <input type='password' name = 'password' value = {formData.password} onChange={handleChange}></input><br></br>
         <button type='submit'>Login</button>
       </form>
