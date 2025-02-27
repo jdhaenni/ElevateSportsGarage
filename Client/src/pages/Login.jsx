@@ -3,7 +3,6 @@ import { loginAdmin } from "../api/LoginApi";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import AuthService from "../api/AuthService";
-import "./login.css";
 
 export default function Login() {
   const navigate = useNavigate();
