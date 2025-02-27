@@ -17,13 +17,13 @@ export default function AdminReviews () {
     body: '',
     image: ''
   })
-    const [putFormData, setPutFormData] = useState({
-      name: '',
-      date: '',
-      stars: '',
-      body: '',
-      image: ''
-    })
+  const [putFormData, setPutFormData] = useState({
+    name: '',
+    date: '',
+    stars: '',
+    body: '',
+    image: ''
+  })
   const [createReviewIMG, setCreateReviewIMG] = useState(null)
   const [reviews, setReviews] = useState([])
   const [editingReview, setEditingReview] = useState(null)
@@ -41,7 +41,6 @@ export default function AdminReviews () {
 
     //input validation
 
-  
     if (reviewFormData.stars < 1 || reviewFormData.stars > 5) {
       alert('Stars must be between 1 and 5')
       return
@@ -113,41 +112,39 @@ export default function AdminReviews () {
       [e.target.name]: e.target.value
     }))
   }
-   const handleEditClick = review => {
-      
-      setEditingReview(review._id)
-      setPutFormData({
-        name: review.name,
-        date: review.date,
-        stars: review.stars,
-        body: review.body,
-        image: review.image
-      })
-    }
-    const handleSaveClick = async reviewId => {
-      try {
-        const updatedReview = await updateReview(reviewId, putFormData)
-  
-        if (updatedReview) {
-          // Fetch updated services list
-          const data = await fetchAllReviews()
-          setReviews(data)
-          setEditingReview(null) // Stop editing
-          setPutFormData({
-            name: '',
-            date: '',
-            stars: '',
-            body: '',
-            image: ''
-          })
-        } else {
-          throw new Error('Failed to update the service.')
-        }
-      } catch (error) {
-        console.log(error)
+  const handleEditClick = review => {
+    setEditingReview(review._id)
+    setPutFormData({
+      name: review.name,
+      date: review.date,
+      stars: review.stars,
+      body: review.body,
+      image: review.image
+    })
+  }
+  const handleSaveClick = async reviewId => {
+    try {
+      const updatedReview = await updateReview(reviewId, putFormData)
+
+      if (updatedReview) {
+        // Fetch updated services list
+        const data = await fetchAllReviews()
+        setReviews(data)
+        setEditingReview(null) // Stop editing
+        setPutFormData({
+          name: '',
+          date: '',
+          stars: '',
+          body: '',
+          image: ''
+        })
+      } else {
+        throw new Error('Failed to update the service.')
       }
+    } catch (error) {
+      console.log(error)
     }
-  
+  }
 
   const starsFunction = function (numberOfStars) {
     return Array.from({ length: 5 }).map((_, index) => (
@@ -158,7 +155,9 @@ export default function AdminReviews () {
           color: index < numberOfStars ? 'gold' : 'gray',
           fontSize: '20px'
         }}
-        onClick={() => setReviewFormData({ ...reviewFormData, stars: index + 1 })}
+        onClick={() =>
+          setReviewFormData({ ...reviewFormData, stars: index + 1 })
+        }
       >
         &#9733;
       </span>
@@ -173,7 +172,7 @@ export default function AdminReviews () {
           color: index < numberOfStars ? 'gold' : 'gray',
           fontSize: '20px'
         }}
-        onClick={() => setPutFormData({ ...reviewFormData, stars: index + 1 })}
+        onClick={() => setPutFormData({ ...putFormData, stars: index + 1 })}
       >
         &#9733;
       </span>
@@ -209,9 +208,9 @@ export default function AdminReviews () {
             ></input>
             <br></br>
             <label>Stars (1-5)</label>
-          <br />
-          <div>{starsFunction(reviewFormData.stars)}</div>
-          <br />
+            <br />
+            <div>{starsFunction(reviewFormData.stars)}</div>
+            <br />
             <label>Body</label>
             <br></br>
             <input
@@ -234,8 +233,8 @@ export default function AdminReviews () {
             <button type='submit'>Create New Review</button>
           </form>
           <br></br>
-          </ul>
-          <ul>
+        </ul>
+        <ul>
           {reviews.map(review => {
             return (
               <li key={review._id}>
@@ -264,7 +263,8 @@ export default function AdminReviews () {
                       <br />
                       <div>{editStarsFunction(putFormData.stars)}</div>
                       <br />
-                      <label>Body</label><br />
+                      <label>Body</label>
+                      <br />
                       <input
                         type='text'
                         name='body'
@@ -281,6 +281,20 @@ export default function AdminReviews () {
                         onChange={handlePutChange}
                       />
                       <br />
+                      <button
+                        onClick={() => {
+                          setEditingReview(null) // Stop editing
+                          setPutFormData({
+                            name: '',
+                            date: '',
+                            stars: '',
+                            body: '',
+                            image: ''
+                          }) // Clear the form data
+                        }}
+                      >
+                        Cancel
+                      </button>
                       <button onClick={() => handleSaveClick(review._id)}>
                         Save Changes
                       </button>
@@ -296,7 +310,7 @@ export default function AdminReviews () {
                         {review.date}
                       </div>
                       <div>
-                       Stars:
+                        Stars:
                         <br />
                         {starsFunction(review.stars)}
                       </div>
@@ -306,19 +320,17 @@ export default function AdminReviews () {
                         UPDATE
                       </button>
                     </>
-          )}
+                  )}
                   <br></br>
                   <button name={review._id} onClick={deleteReviewButton}>
                     DELETE
                   </button>
                   <br></br>
-                
                 </p>
               </li>
             )
           })}
         </ul>
-        
       </div>
     </div>
   )

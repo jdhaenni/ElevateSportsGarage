@@ -20,4 +20,4 @@ jwt token error UI
 
 REVIEWS
 
-stars,cancel update,
+stars,cancel update,img

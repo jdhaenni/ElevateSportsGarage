@@ -227,6 +227,15 @@ export default function AdminServices () {
                         onChange={handlePutChange}
                       />
                       <br />
+                      <button onClick={() => {
+  setEditingService(null);  // Stop editing
+  setPutFormData({
+    name: '',
+    description: '',
+    price: '',
+    image: ''
+  });  // Clear the form data
+}}>Cancel</button>
                       <button onClick={() => handleSaveClick(service._id)}>
                         Save Changes
                       </button>
@@ -248,6 +257,7 @@ export default function AdminServices () {
                       </div>
                       <img src={service.image} alt={service.name}></img>
                       <br />
+                      
                       <button onClick={() => handleEditClick(service)}>
                         UPDATE
                       </button>
