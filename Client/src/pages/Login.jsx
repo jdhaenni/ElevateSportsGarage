@@ -41,7 +41,7 @@ export default function Login() {
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <label>User Name</label>
+        <label style={{ color: "black" }}>User Name</label>
         <br></br>
         <input
           type="text"
@@ -50,7 +50,7 @@ export default function Login() {
           onChange={handleChange}
         ></input>
         <br></br>
-        <label>Password</label>
+        <label style={{ color: "black" }}>Password</label>
         <br></br>
         <input
           type="password"

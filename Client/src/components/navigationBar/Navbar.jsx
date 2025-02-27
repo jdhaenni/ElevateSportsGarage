@@ -2,11 +2,12 @@ import React, { useState } from 'react'
 import './Navbar.css'
 import { FaBars } from 'react-icons/fa'
 import Sidebar from '../sidebar/Sidebar'
-
+import { Link } from 'react-router-dom'
 export default function NavBar () {
   const [isOpen, setIsOpen] = useState(false)
 
-  const toggleSidebar = () => {setIsOpen(!isOpen)
+  const toggleSidebar = () => {
+    setIsOpen(!isOpen)
     console.log(isOpen)
   }
   return (
@@ -14,12 +15,12 @@ export default function NavBar () {
       <div className='sidebar-container'>
         <Sidebar isOpen={isOpen} toggleSidebar={toggleSidebar} />
       </div>
-      <div>
+      <div className='logo-container'><Link to='/'>
         <img
           className='logo'
-          src='https://www.elevatesportsgarage.com/_next/image?url=%2Flogo.png&w=256&q=75'
+          src='https://res.cloudinary.com/dlcaybqqy/image/upload/v1740608408/logo_qqatsu.png'
           alt='esg logo'
-        />
+        /></Link>
       </div>
       <div className='nav-content'>
         <h1 className='site-title'>Elevate Sports Garage</h1>
