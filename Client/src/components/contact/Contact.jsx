@@ -34,9 +34,11 @@ export default function Contact () {
 
   return (
     <div className='contact-container'>
-      Contact Us!<br></br>
-
-      <form></form>{' '}
+      <p className='contact-us-text'>Contact Us!</p>
+      <br></br>
+      <form className='contact-text'>
+        {'We would love to hear from you! Ask about our birthday packages!'}
+      </form>
       <form onSubmit={handleContactSubmit}>
         <label className='name'>Name</label>
         <br></br>
@@ -61,7 +63,7 @@ export default function Contact () {
         <label className='message'>Message</label>
         <br></br>
         <input
-        className='body'
+          className='body'
           type='text'
           name='body'
           value={contactFormData.body}
