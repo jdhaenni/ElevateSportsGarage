@@ -30,7 +30,7 @@
   border: 3px solid;
   border-radius: 8px;
   background: rgba(255, 255, 255, 0.1);
-  color: #fff;
+  color: #ffffff;
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
@@ -65,7 +65,7 @@
   font-size: 1.3rem;
   padding: 10px;
   margin: 0;
-  color: #ddd;
+  color: #ffffff;
 }
 
 @keyframes glow {
