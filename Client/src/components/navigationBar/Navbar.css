@@ -19,6 +19,8 @@
 }
 .logo {
   max-height: 260px;
+  padding: 20px;
+  margin-right: 3.5rem;
   width: auto;
   display: block;
 }
