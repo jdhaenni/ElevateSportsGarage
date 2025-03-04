@@ -40,6 +40,12 @@ export default function Testimonials () {
               <br></br>
               {review.date}
               <br></br>
+              <img
+                className='testimonials-image'
+                src={review.image}
+                alt={review.name}
+              />
+              <br></br>
               {review.body}
               <br></br>
             </p>
