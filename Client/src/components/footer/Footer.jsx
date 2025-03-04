@@ -24,12 +24,24 @@ export default function Footer() {
       <div className="footer-details">
         {" "}
         {/* The footer contains a details section with address and contact information. */}
-        <p>1234 garage , somewhere in texas, TX 1234567 </p>{" "}
+        <p>
+          Contact Us
+          <br></br>
+          📍 1270 Sattler Road
+          <br></br>
+          🗺️ New Braunfels, Texas 78132
+        </p>{" "}
         {/* The address information is displayed in a paragraph element. */}
-        <p> email: email here | phone: (123) 456-7890</p>{" "}
+        <p>
+          {" "}
+          📧 info@elevatesportsgarage.com
+          <br></br>
+          📞 (830) 964-6078
+        </p>{" "}
         {/* The contact information is displayed in a paragraph element. */}
       </div>
       <div className="footer-hours">
+        Hours
         <AdminHours />
       </div>
       <div className="footer-social">
