@@ -1,8 +1,3 @@
-body {
-  background: linear-gradient(to right, #000, #51eb14);
-}
-
-/* Full-page background styling */
 .contact-container {
   display: flex;
   flex-direction: column;
@@ -27,32 +22,11 @@ body {
 
 /* Contact Form */
 form {
-  background: #1a1a1a;
-  border: 3px solid #51eb14;
-  border-radius: 10px;
-  padding: 2rem;
-  width: 100%;
-  max-width: 450px;
-  box-shadow: 0 0 15px rgba(81, 235, 20, 0.3);
-  text-align: center;
-  animation: slideIn 1s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
 }
 
-.contact-text {
-  font-size: 1.6rem;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  text-align: center;
-}
-
-.contact-us-text {
-  font-size: 1.8rem;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  font-weight: bold;
-  text-align: center;
-  margin-top: 10px;
-}
-
-/* Labels */
 form label {
   font-size: 1rem;
   font-weight: bold;
