@@ -14,7 +14,7 @@ export default function Contact () {
 
     try {
       createContact(contactFormData)
-
+      alert("Thanks for your message, we will get back to you soon!")
       setContactFormData({
         name: '',
         email: '',
