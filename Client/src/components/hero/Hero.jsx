@@ -9,7 +9,7 @@ const Hero = () => {
   return (
     <section className="hero-section">
       <div className="hero-header">
-        <p className="join-now">JOIN US NOW</p>
+        <p className="join-now">Ask Us About Our Birthday Specials!</p>
         <QuickContactButton label="Contact Us" />
         <h1 className="hero-title">ELEVATE YOUR GAME</h1>
         <p className="hero-subtitle"> Secure Your Membership!</p>
