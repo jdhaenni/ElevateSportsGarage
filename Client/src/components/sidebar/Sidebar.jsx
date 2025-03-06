@@ -17,7 +17,8 @@ export default function Sidebar ({ isOpen, toggleSidebar }) {
             <Link to='/'>Home</Link>
           </li>
           <li onClick={toggleSidebar}>
-            <Link to='/services'>Services</Link>
+            <Link to='/services'>Batting Cage and<br></br> Full Facility Rentals
+            </Link>
           </li>
           <li onClick={toggleSidebar}>
             <Link to='/contact'>Contact</Link>

@@ -11,18 +11,6 @@
     succeful contact send confomation with nice message
     home page link to contact form/booking " ask us about birthday yadada  etc"
 
-HOME PAGE
-
-  
-    style on WHY CHOOSE?
-   
- 
-    
-
-
-
-backlog:
-
 ADMIN    
     extra api call on protected routes for JWT verification,  no needed as none of the data will be rendered?
    Anyalitics?!
