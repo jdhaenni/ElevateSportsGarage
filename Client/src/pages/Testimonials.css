@@ -37,3 +37,46 @@
   margin-left: 20px;
   border-radius: 10%;
 }
+
+.review-stars {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Media query for mobile phones */
+@media only screen and (max-width: 600px) {
+  .testimonials-item {
+    flex-direction: column;
+  }
+
+  .testimonials-image {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+/* Media query for tablets */
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  .testimonials-item {
+    flex-direction: column;
+  }
+
+  .testimonials-image {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+/* Media query for desktop */
+@media only screen and (min-width: 1025px) {
+  .testimonials-item {
+    flex-direction: row;
+  }
+
+  .testimonials-image {
+    width: 150px;
+    height: 150px;
+  }
+}

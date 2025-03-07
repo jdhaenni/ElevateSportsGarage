@@ -36,7 +36,7 @@ export default function Testimonials () {
             <p className='testimonials-item'>
               {review.name}
               <br></br>
-              {starsFunction(review.stars)}
+              <div className='review-stars'>{starsFunction(review.stars)}</div>
               <br></br>
               {review.date}
               <br></br>
