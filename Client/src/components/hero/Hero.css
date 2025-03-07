@@ -214,6 +214,10 @@ h1 {
   font-size: 1rem;
 }
 
+.testimonial-img{
+  width: 75%;
+}
+
 .testimonials-link-button {
   background-color: #51eb14;
   color: #000;

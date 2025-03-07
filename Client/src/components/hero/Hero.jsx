@@ -9,7 +9,7 @@ const Hero = () => {
   return (
     <section className="hero-section">
       <div className="hero-header">
-        <p className="join-now">JOIN US NOW</p>
+        <p className="join-now">Ask Us About Our Birthday Specials!</p>
         <QuickContactButton label="Contact Us" />
         <h1 className="hero-title">ELEVATE YOUR GAME</h1>
         <p className="hero-subtitle"> Secure Your Membership!</p>
@@ -85,6 +85,7 @@ const Hero = () => {
         <QuickContactButton label="Contact Us" />
       </div>
       <div className="hero-testimonials">
+        <img className = "testimonial-img" src="https://res.cloudinary.com/dlcaybqqy/image/upload/v1741305317/IMG_6282_irwipu.jpg" alt="coach-img" /><br></br>
         <p>Curious what local coaches are saying?</p>
         <Link to="/testimonials" className="testimonials-link-button">
           See Testimonials

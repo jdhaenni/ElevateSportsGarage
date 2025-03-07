@@ -6,7 +6,7 @@ import {
   faInstagram,
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
-import AdminHours from "../admin/AdminHours";
+import FooterHours from "../footer/FooterHours";
 
 export default function Footer() {
   // The Footer component is a functional component that renders the footer section of the website.
@@ -42,7 +42,7 @@ export default function Footer() {
       </div>
       <div className="footer-hours">
         Hours
-        <AdminHours />
+        <FooterHours />
       </div>
       <div className="footer-social">
         <a
