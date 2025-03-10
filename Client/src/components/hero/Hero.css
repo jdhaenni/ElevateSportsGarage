@@ -1,5 +1,6 @@
 .hero-section {
-  background-color: #000;
+  background-color: url("https://res.cloudinary.com/dck559pu7/image/upload/v1741631183/IMG_6272_fpujgp.jpg")
+    no-repeat center center/cover;
   color: #fff;
   padding: 2rem 1rem;
   animation: fadeIn 1s ease-in-out forwards;
@@ -214,7 +215,7 @@ h1 {
   font-size: 1rem;
 }
 
-.testimonial-img{
+.testimonial-img {
   width: 75%;
 }
 
