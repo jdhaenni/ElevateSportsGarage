@@ -14,6 +14,10 @@ export default function Footer() {
     <footer className="footer">
       {" "}
       {/* The footer element has a class name of "footer". */}
+      <div className="footer-hours">
+        Hours
+        <FooterHours />
+      </div>
       <div className="footer-logo">
         <img
           src="https://www.elevatesportsgarage.com/_next/image?url=%2Flogo.png&w=256&q=75"
@@ -40,10 +44,7 @@ export default function Footer() {
         </p>{" "}
         {/* The contact information is displayed in a paragraph element. */}
       </div>
-      <div className="footer-hours">
-        Hours
-        <FooterHours />
-      </div>
+      
       <div className="footer-social">
         <a
           href="https://facebook.com"
@@ -64,8 +65,9 @@ export default function Footer() {
         </a>
 
         {/* The footer contains a rights section with copyright information. */}
-        <p>© date here Elevate Sports Garage. All rights reserved.</p>
+        
       </div>
+    
     </footer>
   );
 }

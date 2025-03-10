@@ -10,7 +10,7 @@ const backgroundImage =
 
 const Hero = () => {
   return (
-    <section
+    <div className="page">    <section
       className="hero-section"
       style={{
         backgroundImage: `url(${backgroundImage})`,
@@ -95,19 +95,22 @@ const Hero = () => {
 
         <QuickContactButton label="Contact Us" />
       </div>
-      <div className="hero-testimonials">
-        <img
-          className="testimonial-img"
-          src="https://res.cloudinary.com/dlcaybqqy/image/upload/v1741305317/IMG_6282_irwipu.jpg"
-          alt="coach-img"
-        />
-        <br></br>
-        <p>Curious what local coaches are saying?</p>
-        <Link to="/testimonials" className="testimonials-link-button">
-          See Testimonials
-        </Link>
-      </div>
+      
     </section>
+    <div className="hero-testimonials">
+    <img
+      className="testimonial-img"
+      src="https://res.cloudinary.com/dlcaybqqy/image/upload/v1741305317/IMG_6282_irwipu.jpg"
+      alt="coach-img"
+    />
+    <br></br>
+    <p>Curious what local coaches are saying?</p>
+    <Link to="/testimonials" className="testimonials-link-button">
+      See Testimonials
+    </Link>
+  </div>
+  </div>
+
   );
 };
 export default function JazzHero() {

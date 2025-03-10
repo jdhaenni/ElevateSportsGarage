@@ -1,3 +1,4 @@
+.page{background-color: #000;}
 .hero-section {
   background-color: url("https://res.cloudinary.com/dck559pu7/image/upload/v1741631183/IMG_6272_fpujgp.jpg")
     no-repeat center center/cover;
@@ -7,11 +8,15 @@
   text-align: center;
   position: relative;
   overflow: hidden;
+
 }
 
 .hero-header {
   margin-bottom: 2rem;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .join-now {
@@ -22,6 +27,9 @@
   text-transform: uppercase;
   font-weight: bold;
   animation: glow 1.5s infinite alternate;
+  width:35%;
+  background-color: #000;
+  
 }
 
 .hero-title {
@@ -36,6 +44,9 @@
 .hero-subtitle {
   font-size: 1.2rem;
   color: white;
+  width:40%;
+  background-color: #000;
+  width: 15%;
 }
 
 .memberships-container {
