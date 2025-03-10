@@ -1,20 +1,7 @@
 
-
-    deployment
-    
-    Mobile Responsive everywhere, inbetween sizes
-
-        -testimponials MR
-
-
-    Anyalitics?!
- 
-    h1 (optional)
-
-    HERO 
-
     Hours into footer?
 
 
+home page css black boxes
 
-batting cages/tgeam facility
+linkd in qr
