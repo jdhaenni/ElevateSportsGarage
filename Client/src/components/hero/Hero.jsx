@@ -5,9 +5,20 @@ import QuickContactButton from "../contact/QuickContactButton";
 import "../contact/QuickContactButton.css";
 import { Link } from "react-router-dom";
 
+const backgroundImage =
+  "https://res.cloudinary.com/dck559pu7/image/upload/v1741631183/IMG_6272_fpujgp.jpg";
+
 const Hero = () => {
   return (
-    <section className="hero-section">
+    <section
+      className="hero-section"
+      style={{
+        backgroundImage: `url(${backgroundImage})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
       <div className="hero-header">
         <p className="join-now">Ask Us About Our Birthday Specials!</p>
         <QuickContactButton label="Contact Us" />
@@ -85,7 +96,12 @@ const Hero = () => {
         <QuickContactButton label="Contact Us" />
       </div>
       <div className="hero-testimonials">
-        <img className = "testimonial-img" src="https://res.cloudinary.com/dlcaybqqy/image/upload/v1741305317/IMG_6282_irwipu.jpg" alt="coach-img" /><br></br>
+        <img
+          className="testimonial-img"
+          src="https://res.cloudinary.com/dlcaybqqy/image/upload/v1741305317/IMG_6282_irwipu.jpg"
+          alt="coach-img"
+        />
+        <br></br>
         <p>Curious what local coaches are saying?</p>
         <Link to="/testimonials" className="testimonials-link-button">
           See Testimonials
