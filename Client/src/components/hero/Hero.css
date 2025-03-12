@@ -25,6 +25,7 @@
   font-size: 1.5rem;
   letter-spacing: 1px;
   margin-bottom: 0.5rem;
+  border-radius: 10px;
   text-transform: uppercase;
   font-weight: bold;
   animation: glow 1.5s infinite alternate;
@@ -49,15 +50,10 @@
   font-weight: bold;
   background: rgba(0, 0, 0, 0.6);
   margin-top: 5px;
-  font-size: 1.2rem;
   display: inline-block;
-  text-align: center;
   padding: 10px 15px;
-  width: 40%;
-  background-color: #000;
-  width: 15%;
-  padding: 1%;
-  border-radius: 20px;
+  border-radius: 8px;
+  text-align: center;
 }
 
 .memberships-container {
